@@ -14,7 +14,7 @@ live in `site.config.json`, not here: the build puts them into every page. This 
 ## Hosting
 - REPO_NAME: smoksport
 - REPO_OWNER: GKunc
-- CUSTOM_DOMAIN: www.smoksport.pl (docelowo; na razie adres github.io, dopóki stara strona na WordPressie działa)
+- CUSTOM_DOMAIN: www.smoksport.pl (DNS w OVH; smoksport.pl bez www przekierowuje na www)
 
 ## Business
 - What is offered: zajęcia ogólnorozwojowe i lekkoatletyczne dla dzieci (biegi, skoki, rzuty, starty z bloków); damskie wyjazdy biegowe (rozbieganekobiety.pl)
