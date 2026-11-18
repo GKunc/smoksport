@@ -37,9 +37,12 @@ jobs:
 
       # One command, the same one people run locally: build, release checks, HTML validation,
       # internal links and Lighthouse budgets. Tool versions are pinned in tools/lib.mjs.
+      # Lighthouse audits only the pages this push (or PR) changed; Run workflow by hand audits all.
       - name: Verify (node tools/verify.mjs --lighthouse)
         if: steps.mode.outputs.configured == 'true'
-        run: node tools/verify.mjs --lighthouse
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node tools/verify.mjs --lighthouse ${BASE:+--base=$BASE}
 
       - name: Keep Lighthouse report
         if: always() && steps.mode.outputs.configured == 'true'
