@@ -8,9 +8,12 @@
 //                    <base> is built in a temporary git worktree and the two _site folders are compared.
 //                    No page changed -> Lighthouse is skipped. Everything is audited when lighthouserc.json
 //                    changed, or when <base> is missing, all zeros, unknown or does not build.
+//                    More than SAMPLE (5) pages changed = a shared file changed (menu, footer, stylesheet,
+//                    script, site.config.json): SAMPLE of them, picked at random, are audited instead.
 //     --base=<commit>  what to compare with. Default: origin/main locally; in CI (CI env set) a full run
-//                      unless the workflow passes one (it passes the commit before the push, or the PR's base).
-//     --all            audit every page (the old behaviour; Run workflow by hand in GitHub does this too)
+//                      unless the workflow passes one (it passes the commit of the last successful deploy,
+//                      so a page that failed before is checked again until it passes).
+//     --all            audit every page, no sampling (Run workflow by hand in GitHub does this too)
 //     --dry-run        only print which pages would be audited
 //   --if-configured  do nothing while the repo is still the untouched template (used by hooks)
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -99,9 +102,11 @@ function checkLinks() {
 
 /**
  * Built pages that differ from the <base> build: their HTML changed, or a file they load does
- * (stylesheet, script, image, font; files a stylesheet loads count for the pages using it).
+ * (stylesheet, script, image, font, video; files a stylesheet loads count for the pages using it).
  * Returns { pages: [paths relative to _site] } or { pages: null } for "audit everything", plus why.
  */
+const SAMPLE = 5;
+const ASSET = /\.(css|m?js|png|jpe?g|gif|webp|avif|svg|ico|woff2?|ttf|otf|mp4|webm)$/i;
 function pagesToAudit() {
   if (args.has('--all')) return { pages: null, why: '--all' };
   const base = option('base') ?? (process.env.CI ? '' : 'origin/main');
@@ -135,9 +140,9 @@ function pagesToAudit() {
     };
     const pages = walk(OUT).filter((p) => p.endsWith('.html')).map((p) => rel(p, OUT)).filter((r) => {
       if (changed.has(r)) return true;
-      // Links to other pages do not count, only what this page loads.
+      // Only what the page loads counts: links to other pages, the feed or llms.txt do not.
       const loads = localRefs(join(OUT, r)).filter((x) => x.target?.startsWith(OUT)).map((x) => rel(x.target, OUT))
-        .filter((f) => !f.endsWith('.html'));
+        .filter((f) => ASSET.test(f));
       return loads.some((f) => changed.has(f) || (f.endsWith('.css') && cssRefs(f).some((g) => changed.has(g))));
     });
     return { pages, why: `compared with ${label}` };
@@ -150,10 +155,17 @@ function pagesToAudit() {
 }
 
 function lighthouseStep() {
-  const { pages, why } = pagesToAudit();
+  let { pages, why } = pagesToAudit();
   if (pages && !pages.length) {
     console.log(`No page changed (${why}): Lighthouse not needed.`);
     return true;
+  }
+  if (pages && pages.length > SAMPLE) {
+    const all = pages.length;
+    for (let i = pages.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pages[i], pages[j]] = [pages[j], pages[i]]; }
+    pages.length = SAMPLE;
+    pages.sort();
+    why += `; ${all} pages changed, so a shared file did: ${SAMPLE} picked at random`;
   }
   const urls = pages ? pages.map((r) => `--collect.url=http://localhost/${encodeURI(r)}`) : [];
   console.log(pages ? `Auditing ${pages.length} changed page(s) (${why}):\n  ${pages.join('\n  ')}` : `Auditing every page (${why}).`);

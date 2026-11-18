@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read # to find the last successful deploy (Lighthouse only re-checks pages changed since then)
   pages: write
   id-token: write
 concurrency:
@@ -35,14 +36,24 @@ jobs:
         if: steps.mode.outputs.configured != 'true'
         run: node tools/selftest.mjs --lighthouse
 
+      # Lighthouse only re-checks pages that changed since the last version that passed and went live
+      # (so a page that failed last time is checked again). Nothing found (first deploy) or the workflow
+      # started by hand (Run workflow) -> every page is checked.
+      - name: Find the last successful deploy
+        id: base
+        if: steps.mode.outputs.configured == 'true' && github.event_name != 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sha=$(gh run list --workflow pages.yml --branch main --event push --status success --limit 1 --json headSha --jq '.[0].headSha // ""' 2>/dev/null || true)
+          echo "Comparing with: ${sha:-nothing, every page will be checked}"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
       # One command, the same one people run locally: build, release checks, HTML validation,
       # internal links and Lighthouse budgets. Tool versions are pinned in tools/lib.mjs.
-      # Lighthouse audits only the pages this push (or PR) changed; Run workflow by hand audits all.
       - name: Verify (node tools/verify.mjs --lighthouse)
         if: steps.mode.outputs.configured == 'true'
-        env:
-          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-        run: node tools/verify.mjs --lighthouse ${BASE:+--base=$BASE}
+        run: node tools/verify.mjs --lighthouse --base="${{ steps.base.outputs.sha }}"
 
       - name: Keep Lighthouse report
         if: always() && steps.mode.outputs.configured == 'true'

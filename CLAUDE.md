@@ -27,10 +27,10 @@ One repo per landing page. Start with the `new-landing` skill; hosting is handle
 ## Guards (they run by themselves; do not bypass them)
 - After every edit a hook rebuilds the site; a broken build comes back to you as an error.
 - When you finish a turn with uncommitted site changes, a hook runs `node tools/verify.mjs --quick` and sends failures back to you. Fix them, or ask the user for the missing fact.
-- git pre-commit / pre-push hooks and CI run the same checks; CI (`node tools/verify.mjs --lighthouse`) is what gates the deploy.
+- git pre-commit / pre-push hooks and CI run the same checks; CI (`node tools/verify.mjs --lighthouse`) is what gates the deploy; its Lighthouse step checks only the pages that changed since the last successful deploy, and 5 random ones of them when more than 5 changed (a shared file such as the menu or CSS) (Run workflow by hand checks all).
 
 ## Before calling anything done
-1. `node tools/verify.mjs` passes (build, release checks, HTML validation, internal links; `--lighthouse` for the full CI set).
+1. `node tools/verify.mjs` passes (build, release checks, HTML validation, internal links; `--lighthouse` for the full CI set: Lighthouse on pages changed since `origin/main`, `--all` for every page).
 2. Preview (`.claude/launch.json` → `site`) checked in the browser: console clean, 375px and desktop, light and dark.
 3. After pushing: `gh run watch` succeeds and the live URL returns 200.
 4. Changed `tools/`, the partials or the workflow in the template itself → `node tools/selftest.mjs` passes.

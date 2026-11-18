@@ -36,7 +36,7 @@ gh api -X POST repos/OWNER/NAME/pages -f build_type=workflow \
 
 ## 4. Deploy
 1. `node tools/verify.mjs` must pass (the pre-push hook runs `--quick` too).
-2. Commit and push to `main`. The workflow runs `node tools/verify.mjs --lighthouse` (the same command as locally); only then does it deploy.
+2. Commit and push to `main`. The workflow runs `node tools/verify.mjs --lighthouse` (the same command as locally; Lighthouse checks only the pages changed since the last successful deploy, and at most 5 random ones when a shared file such as the menu or CSS changed, so a deploy takes minutes, not most of an hour); only then does it deploy. To re-check every page, start the workflow by hand: `gh workflow run pages.yml`.
 3. Wait for it: `gh run watch --exit-status $(gh run list --branch main --limit 1 --json databaseId --jq '.[0].databaseId')` (run in the background; takes a few minutes).
 4. On failure: `gh run view --log-failed`, fix, push again. The Lighthouse report is attached to the run as the `lighthouse` artifact.
 

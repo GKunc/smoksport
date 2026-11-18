@@ -7,7 +7,7 @@ import { spawn, spawnSync } from 'node:child_process';
 import { cpSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { ROOT } from './lib.mjs';
+import { ROOT, rel, walk } from './lib.mjs';
 
 const lighthouse = process.argv.includes('--lighthouse');
 const tmp = join(tmpdir(), 'landing template selftest');
@@ -49,7 +49,7 @@ function run(name, script, args = [], { expectFail = false, env = {} } = {}) {
 
 run('Generate og.png and icons', 'tools/make-assets.mjs');
 run('Guard: template filler copy must be rejected', 'tools/check.mjs', [], { expectFail: true });
-run('Full verification of the filled template', 'tools/verify.mjs', lighthouse ? ['--lighthouse'] : [], { env: { ALLOW_FILLER: '1' } });
+run('Full verification of the filled template', 'tools/verify.mjs', lighthouse ? ['--lighthouse', '--all'] : [], { env: { ALLOW_FILLER: '1' } });
 
 const withConfig = (changes) => writeFileSync(join(tmp, 'site.config.json'), JSON.stringify({ ...JSON.parse(fixture), ...changes }, null, 2));
 const OK = { env: { ALLOW_FILLER: '1' } };
@@ -124,6 +124,37 @@ withConfig({});
   console.log(ok ? '✔ Template update: tool replaced, CSS merged, site edits and settings kept, new key added' : '✘ Template update result is wrong');
   if (!ok) failed = true;
   rmSync(tpl, { recursive: true, force: true }); rmSync(site, { recursive: true, force: true });
+}
+
+// Lighthouse picks only the pages a change touches (verify.mjs --lighthouse --dry-run prints them).
+{
+  const repo = join(tmpdir(), 'landing template selftest lighthouse');
+  const g = (...a) => spawnSync('git', ['-c', 'user.name=t', '-c', 'user.email=t@t.t', ...a], { cwd: repo, encoding: 'utf8' });
+  rmSync(repo, { recursive: true, force: true });
+  cpSync(tmp, repo, { recursive: true, filter: (p) => !/^(_site|\.tpl-repo|\.site-repo|\.lighthouseci)$/.test(p.slice(tmp.length + 1).split(/[\\/]/)[0]) });
+  writeFileSync(join(repo, 'site.config.json'), fixture);
+  g('init', '-q', '-b', 'main'); g('add', '-A'); g('commit', '-qm', 'base');
+  const pick = (name, edit, expected) => {
+    edit(); g('add', '-A'); g('commit', '-qm', name);
+    const r = spawnSync(process.execPath, ['tools/verify.mjs', '--quick', '--lighthouse', '--dry-run', '--base=HEAD~1'], { cwd: repo, encoding: 'utf8', env: { ...process.env, ALLOW_FILLER: '1' } });
+    const out = r.stdout + r.stderr;
+    const got = out.includes('Lighthouse not needed') ? [] : out.includes('Auditing every page') ? 'all'
+      : [...out.matchAll(/^ {2}(\S+\.html)$/gm)].map((m) => m[1]).sort();
+    const ok = r.status === 0 && (typeof expected === 'function' ? expected(got) : JSON.stringify(got) === JSON.stringify(expected));
+    console.log(ok ? `✔ Lighthouse pages: ${name}` : `✘ Lighthouse pages: ${name}: expected ${JSON.stringify(expected)}, got ${JSON.stringify(got)}\n${out}`);
+    if (!ok) failed = true;
+  };
+  const append = (f, text) => writeFileSync(join(repo, f), readFileSync(join(repo, f), 'utf8') + text);
+  const post = 'src/blog/how-often-to-water.html';
+  const editPost = (a, b) => () => writeFileSync(join(repo, post), readFileSync(join(repo, post), 'utf8').replace(a, b));
+  pick('a blog post text changed -> only that post', editPost('once a week.</p>', 'once a week, less in winter.</p>'), ['blog/how-often-to-water.html']);
+  pick('a blog post description changed -> that post and the blog index', editPost('Here is how to tell.', 'Here is how to check.'), ['blog/how-often-to-water.html', 'blog/index.html']);
+  pick('only emails changed -> no Lighthouse', () => append('emails/autoreply.txt', '\n'), []);
+  const usesCss = (() => { spawnSync(process.execPath, ['tools/build.mjs'], { cwd: repo }); return walk(join(repo, '_site')).filter((p) => p.endsWith('.html') && readFileSync(p, 'utf8').includes('styles.css')).map((p) => rel(p, join(repo, '_site'))).sort(); })();
+  pick('the stylesheet changed -> 5 random pages that load it (all of them if 5 or fewer)', () => append('src/css/styles.css', '\n/* selftest */\n'),
+    (got) => Array.isArray(got) && got.length === Math.min(5, usesCss.length) && got.every((p) => usesCss.includes(p)));
+  pick('Lighthouse budgets changed -> every page', () => append('lighthouserc.json', '\n'), 'all');
+  rmSync(repo, { recursive: true, force: true });
 }
 
 run('Google tool (dry run)', 'tools/google.mjs', ['search-console', '--owners', 'owner@example.com', '--dry-run']);

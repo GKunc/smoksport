@@ -27,7 +27,7 @@ Claude creates the page repo from this template, switches on hosting, fills the 
 | `brief/landing.md` | Business facts; Claude never invents beyond it |
 | `tools/build.mjs` | Builds `_site/`: fills values, includes partials, generates the sitemap, blog index, feed and llms.txt entries |
 | `tools/serve.mjs` | Local preview with live reload (the `site` preview) |
-| `tools/verify.mjs` | The command that gates every deploy, locally and in CI (`--quick` offline, `--lighthouse` full) |
+| `tools/verify.mjs` | The command that gates every deploy, locally and in CI (`--quick` offline; `--lighthouse` adds Lighthouse on the pages changed since `origin/main`, `--lighthouse --all` on every page) |
 | `tools/hook.mjs` | Claude Code hooks: rebuild after each edit, verify before Claude finishes |
 | `tools/selftest.mjs` | Tests the template itself on a fixture site (`tools/fixture/`) |
 | `tools/google.mjs` | Search Console (verify, owners, sitemap) and GA4 (property + stream) through Google's APIs |
@@ -47,7 +47,7 @@ Claude creates the page repo from this template, switches on hosting, fills the 
 | `tools/check.mjs` | Release checks (missing values, filler copy, meta, unique titles, JSON-LD, FAQ schema, blog posts) |
 | `tools/make-assets.mjs` | Generates `og.png` and app icons from the brand (needs local Chrome) |
 | `tools/indexnow.mjs` | Notifies Bing/IndexNow of changed URLs after each deploy |
-| `.github/workflows/pages.yml` | On PRs: `verify.mjs --lighthouse`. On `main`: the same → deploy → smoke test → IndexNow. In the template repo: `selftest.mjs` |
+| `.github/workflows/pages.yml` | On PRs and pushes to `main`: `verify.mjs --lighthouse`, where Lighthouse checks only the pages whose built output changed since the last successful deploy (more than 5 → 5 random ones; none → skipped; `lighthouserc.json` changed, first deploy or Run workflow by hand → every page). On `main` then → deploy → smoke test → IndexNow. In the template repo: `selftest.mjs` |
 | `.github/dependabot.yml` | Keeps the workflow's actions up to date |
 | `lighthouserc.json` | Lighthouse budgets: performance ≥ 0.9; accessibility, best practices, SEO ≥ 0.95; CLS ≤ 0.1 |
 | `.claude/skills/` | dev-setup, new-landing, publish, domain-knowledge, seo, blog-post, emails, audit, undo, handoff, maintenance, webmcp |
