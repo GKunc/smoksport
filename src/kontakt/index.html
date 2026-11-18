@@ -1,19 +1,101 @@
 <!DOCTYPE html>
 <html lang="{{LANG}}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Stary adres z WordPressa (/kontakt/). GitHub Pages nie robi 301, a natychmiastowe odświeżenie Google traktuje jak przekierowanie stałe. -->
-  <title>Strona przeniesiona | {{BRAND}}</title>
-  <meta name="description" content="Ta strona ma nowy adres.">
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="{{SITE_URL}}/">
-  <meta http-equiv="refresh" content="0; url=../#kontakt">
+  <!-- @include head -->
+  <title>Zapisz się na zajęcia lekkoatletyczne | {{BRAND}}</title>
+  <meta name="description" content="Zapisz dziecko na zajęcia lekkoatletyczne w Krakowie-Płaszowie: formularz zapisu, telefon +48 570 080 490 i e-mail. Pierwszy trening jest darmowy.">
+  <link rel="canonical" href="{{PAGE_URL}}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{BRAND}}">
+  <meta property="og:locale" content="{{LOCALE}}">
+  <meta property="og:title" content="Zapisz się | {{BRAND}}">
+  <meta property="og:description" content="Zapisz dziecko na zajęcia lekkoatletyczne w Krakowie-Płaszowie: formularz zapisu, telefon +48 570 080 490 i e-mail. Pierwszy trening jest darmowy.">
+  <meta property="og:url" content="{{PAGE_URL}}">
+  <meta property="og:image" content="{{SITE_URL}}/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "{{BRAND}}", "item": "{{SITE_URL}}/" },
+      { "@type": "ListItem", "position": 2, "name": "Zapisz się", "item": "{{PAGE_URL}}" }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <main>
-    <h1>Strona została przeniesiona</h1>
-    <p><a href="../#kontakt">Przejdź do nowej strony</a></p>
+  <!-- @include header -->
+
+  <main id="main">
+    <section class="page-top">
+      <div class="wrap">
+        <p class="eyebrow">Zapisz się!</p>
+        <h1>Zapisz dziecko na pierwszy, darmowy trening</h1>
+        <p class="lead">Wypełnij formularz zapisu, a odezwiemy się z terminem. Wolisz porozmawiać? Zadzwoń albo napisz.</p>
+      </div>
+    </section>
+
+    <section id="zapisy" class="section section-flush">
+      <div class="wrap two-col">
+        <div class="contact-copy">
+          <h2>Masz pytania? Napisz do nas!</h2>
+          <p class="section-lead">Jeśli piszesz e-mail, podaj, jakie godziny zajęć Cię interesują i w jakim wieku jest Twoje dziecko. Prosimy o wcześniejsze zapoznanie się z <a href="../oferta-dzieci/">ofertą</a> i <a href="../cennik/">cennikiem</a>. Odezwiemy się ze szczegółami mailowo.</p>
+          <div class="contact-cards">
+            <a class="contact-card" href="tel:+48570080490"><span>Zadzwoń</span>+48&nbsp;570&nbsp;080&nbsp;490</a>
+            <a class="contact-card" href="mailto:{{CONTACT_EMAIL}}"><span>Napisz</span>{{CONTACT_EMAIL}}</a>
+          </div>
+          <ul class="contact-list">
+            <li><span>Social media</span><a href="https://www.facebook.com/profile.php?id=100091447430165" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/smoksport/" rel="noopener">Instagram</a></li>
+            <li><span>Miejsce zajęć</span>SP nr 47, ul. Myśliwska 64, Kraków-Płaszów</li>
+            <li><span>Dane firmy</span>{{LEGAL_ENTITY}}, NIP 6793255607</li>
+          </ul>
+        </div>
+        <!-- @if !FORM_ENDPOINT -->
+        <!-- Until the form worker is set up, sign-ups go to the existing Google Form (the same one the old site used). -->
+        <div class="form-card signup-card">
+          <h3>Formularz zapisu</h3>
+          <p>Zapisz dziecko przez nasz formularz online. Odezwiemy się mailowo ze szczegółami pierwszego, darmowego treningu.</p>
+          <a class="btn btn-block" href="https://docs.google.com/forms/d/e/1FAIpQLSeXHFq6tYm8gBV1Si9iZvXjlh3dZ8hs0MTNYFBVsJ081wYpow/viewform" rel="noopener">{{CTA_LABEL}}</a>
+          <p class="form-note">Formularz otwiera się w Google Forms. Przed zapisem przeczytaj <a href="../dokumenty/regulamin-2026-2027.pdf">regulamin zajęć</a> i <a href="../dokumenty/klauzula-rodo-2026-2027.pdf">klauzulę RODO</a>.</p>
+        </div>
+        <!-- @endif -->
+        <!-- @if FORM_ENDPOINT -->
+        <form id="lead-form" class="form-card" action="{{FORM_ENDPOINT}}" method="post"
+              data-msg-sending="Wysyłanie…"
+              data-msg-success="Dziękujemy! Odezwiemy się wkrótce."
+              data-msg-error="Coś poszło nie tak. Spróbuj ponownie albo zadzwoń.">
+          <label>Imię rodzica <input type="text" name="name" autocomplete="name"></label>
+          <label>E-mail <input type="email" name="email" required autocomplete="email"></label>
+          <label>Telefon <input type="tel" name="phone" autocomplete="tel"></label>
+          <label>Grupa
+            <select name="group">
+              <option>Grupa szkolna (kl. 1–3), piątek 16:45</option>
+              <option>Grupa przedszkolna (4–6 lat), lista rezerwowa</option>
+              <option>Jeszcze nie wiem</option>
+            </select>
+          </label>
+          <label class="full">Wiadomość (wiek dziecka, pytania) <textarea name="message" rows="3"></textarea></label>
+          <input type="hidden" name="_subject" value="Nowe zgłoszenie ze strony {{BRAND}}">
+          <input type="hidden" name="page" value="{{PAGE_URL}}">
+          <!-- @if TURNSTILE_SITE_KEY -->
+          <div class="turnstile" data-turnstile="{{TURNSTILE_SITE_KEY}}"></div>
+          <!-- @endif -->
+          <!-- @if FORM_ACCESS_KEY -->
+          <input type="hidden" name="access_key" value="{{FORM_ACCESS_KEY}}">
+          <!-- @endif -->
+          <!-- honeypot: real visitors never see or fill this; bots do -->
+          <label class="hp" aria-hidden="true">Zostaw puste <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+          <button class="btn btn-block" type="submit">{{CTA_LABEL}}</button>
+          <p class="form-note">Twoje dane wykorzystamy tylko, by odpowiedzieć. Zobacz <a href="../privacy.html">politykę prywatności</a>.</p>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <!-- @endif -->
+      </div>
+    </section>
   </main>
+
+  <!-- @include footer -->
 </body>
 </html>

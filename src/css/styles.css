@@ -1,8 +1,8 @@
 /* Smok Sport: bright, friendly, photo-led. Purple leads; warm cream ground; one sunny yellow for small highlights.
-   Fredoka (OFL, self-hosted) for headings, system UI for text. */
-@font-face { font-family:"Fredoka"; src:url("../fonts/fredoka-latin-ext.woff2") format("woff2"); font-weight:300 700; font-display:swap;
+   Baloo 2 (OFL, self-hosted, full Polish glyph set) for headings, system UI for text. */
+@font-face { font-family:"Baloo 2"; src:url("../fonts/baloo-2-latin-ext.woff2") format("woff2"); font-weight:400 800; font-display:swap;
   unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
-@font-face { font-family:"Fredoka"; src:url("../fonts/fredoka-latin.woff2") format("woff2"); font-weight:300 700; font-display:swap;
+@font-face { font-family:"Baloo 2"; src:url("../fonts/baloo-2-latin.woff2") format("woff2"); font-weight:400 800; font-display:swap;
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 
 :root {
@@ -22,7 +22,7 @@
   --radius: 24px;
   --radius-sm: 14px;
   --max: 1200px;
-  --display: "Fredoka", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  --display: "Baloo 2", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
   --shadow: 0 18px 40px -22px rgba(64, 24, 128, .35);
   color-scheme: light;
 }
@@ -291,3 +291,26 @@ cite { display:block; color:var(--muted); font-size:.9rem; margin-top:.5rem; }
 .site-header .nav-mobile summary::after { content:none; }
 @media (min-width: 980px) { .site-header .header-cta { display:inline-flex; margin-left:.5rem; } }
 @media (max-width: 559px) { .hero-actions .btn { width:100%; } }
+
+/* Subpages (Oferta zajęć, Cennik, Zapisz się): same pages as the old smoksport.pl menu */
+.page-top { padding:3rem 0 0; background:linear-gradient(var(--cream), var(--bg)); }
+@media (min-width: 700px) { .page-top { padding:4.5rem 0 1rem; } }
+.page-top h1 { font-size:clamp(2.4rem, 6.5vw, 4.2rem); line-height:1.02; margin-bottom:1.1rem; max-width:16ch; }
+.page-top .lead { max-width:40rem; margin-bottom:0; }
+.section-flush { padding-top:2.5rem; }
+.cta-band { display:grid; gap:1.5rem; align-items:center; background:var(--accent); color:#fff; border-radius:calc(var(--radius) + 4px); padding:2rem 1.5rem; box-shadow:var(--shadow); }
+@media (min-width: 760px) { .cta-band { grid-template-columns:1fr auto; padding:2.75rem 3rem; } }
+.cta-band h2 { color:#fff; margin-bottom:.5rem; }
+.cta-band p { margin:0; color:#efe7ff; font-size:1.1rem; }
+.cta-band .btn, .btn-sun { background:var(--sun); border-color:var(--sun); color:var(--text); box-shadow:0 4px 0 #d99a12; }
+.cta-band .btn:hover, .btn-sun:hover { box-shadow:0 6px 0 #d99a12; }
+.more-btn { margin-top:1.5rem; }
+.gallery { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:.75rem; }
+@media (min-width: 900px) { .gallery { grid-template-columns:repeat(3, minmax(0,1fr)); gap:1rem; } }
+.gallery img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius-sm); }
+.gallery img:first-child { object-position:center 30%; }
+.link-cards { display:grid; gap:.75rem; }
+.account { background:var(--cream); border-radius:var(--radius-sm); padding:1rem 1.25rem; font-weight:700; font-size:1.1rem; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+.account span { display:block; font-weight:600; font-size:.85rem; color:var(--accent); }
+.contact-list { list-style:none; padding:0; margin:1.75rem 0 0; display:grid; gap:1rem; }
+.contact-list span { display:block; font-weight:600; font-size:.85rem; color:var(--accent); }

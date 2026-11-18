@@ -1,19 +1,95 @@
 <!DOCTYPE html>
 <html lang="{{LANG}}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Stary adres z WordPressa (/cennik/). GitHub Pages nie robi 301, a natychmiastowe odświeżenie Google traktuje jak przekierowanie stałe. -->
-  <title>Strona przeniesiona | {{BRAND}}</title>
-  <meta name="description" content="Ta strona ma nowy adres.">
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="{{SITE_URL}}/">
-  <meta http-equiv="refresh" content="0; url=../#cennik">
+  <!-- @include head -->
+  <title>Cennik zajęć dla dzieci 2026/2027 | {{BRAND}}</title>
+  <meta name="description" content="Cennik zajęć lekkoatletycznych dla dzieci w Krakowie-Płaszowie na rok 2026/2027: 600 zł za semestr lub 160 zł miesięcznie, zniżka dla rodzeństwa.">
+  <link rel="canonical" href="{{PAGE_URL}}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{BRAND}}">
+  <meta property="og:locale" content="{{LOCALE}}">
+  <meta property="og:title" content="Cennik i harmonogram 2026/2027 | {{BRAND}}">
+  <meta property="og:description" content="Cennik zajęć lekkoatletycznych dla dzieci w Krakowie-Płaszowie na rok 2026/2027: 600 zł za semestr lub 160 zł miesięcznie, zniżka dla rodzeństwa.">
+  <meta property="og:url" content="{{PAGE_URL}}">
+  <meta property="og:image" content="{{SITE_URL}}/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "{{BRAND}}", "item": "{{SITE_URL}}/" },
+      { "@type": "ListItem", "position": 2, "name": "Cennik", "item": "{{PAGE_URL}}" }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <main>
-    <h1>Strona została przeniesiona</h1>
-    <p><a href="../#cennik">Przejdź do nowej strony</a></p>
+  <!-- @include header -->
+
+  <main id="main">
+    <section class="page-top">
+      <div class="wrap">
+        <p class="eyebrow">Cennik</p>
+        <h1>Cennik i harmonogram 2026/2027</h1>
+        <p class="lead">Najpierw trening, potem decyzja. Pierwsze zajęcia są darmowe, a płacisz dopiero wtedy, gdy dziecko chce zostać.</p>
+      </div>
+    </section>
+
+    <section id="cennik" class="section section-purple">
+      <div class="wrap two-col two-col-center">
+        <div>
+          <p class="eyebrow eyebrow-light">Zajęcia dla dzieci</p>
+          <h2>I semestr 2026/2027</h2>
+          <p class="section-lead">Płaszów, ul. Myśliwska 64, duża sala gimnastyczna. Pierwsze zajęcia są darmowe.</p>
+        </div>
+        <div class="prices">
+          <div class="price">
+            <p class="price-label">Za I semestr</p>
+            <p class="price-value">600 zł</p>
+            <p class="price-note">jednorazowo</p>
+          </div>
+          <div class="price">
+            <p class="price-label">Miesięcznie</p>
+            <p class="price-value">160 zł</p>
+            <p class="price-note">4 płatności w semestrze</p>
+          </div>
+          <p class="sibling">Rodzeństwo? Opłata semestralna niższa o 50 zł za każde dziecko.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap two-col">
+        <div>
+          <p class="eyebrow">Płatności</p>
+          <h2>Jak i kiedy płacić?</h2>
+          <p class="section-lead">Płatność odbywa się po pierwszych zrealizowanych zajęciach i po podjęciu decyzji przez Rodzica.</p>
+          <p>Opłat należy dokonywać bezpośrednio przelewem bankowym na rachunek Zleceniobiorcy SmokSport Magdalena Kunc, podając w tytule imię i nazwisko Dziecka oraz opłacany miesiąc.</p>
+          <p class="account"><span>Numer rachunku</span>70 1140 2004 0000 3402 8324 2108</p>
+        </div>
+        <div class="link-cards">
+          <a class="contact-card" href="../dokumenty/cennik-i-harmonogram-2026-2027.pdf"><span>PDF</span>Cennik i harmonogram 2026/2027</a>
+          <a class="contact-card" href="../dokumenty/regulamin-2026-2027.pdf"><span>PDF</span>Regulamin zajęć 2026/2027</a>
+          <a class="contact-card" href="../oferta-dzieci/"><span>Grafik i opis zajęć</span>Pełna oferta dla dzieci</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <h2>Daj się zarazić lekką!</h2>
+            <p>Pierwsze zajęcia są darmowe. Przyprowadź dziecko i sprawdź, czy mu się spodoba.</p>
+          </div>
+          <a class="btn btn-big" href="../kontakt/">Zapisz się!</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- @include footer -->
 </body>
 </html>

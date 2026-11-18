@@ -1,19 +1,143 @@
 <!DOCTYPE html>
 <html lang="{{LANG}}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Stary adres z WordPressa (/oferta-dzieci/). GitHub Pages nie robi 301, a natychmiastowe odświeżenie Google traktuje jak przekierowanie stałe. -->
-  <title>Strona przeniesiona | {{BRAND}}</title>
-  <meta name="description" content="Ta strona ma nowy adres.">
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="{{SITE_URL}}/">
-  <meta http-equiv="refresh" content="0; url=../#zajecia">
+  <!-- @include head -->
+  <title>Oferta zajęć dla dzieci w Krakowie | {{BRAND}}</title>
+  <meta name="description" content="Zajęcia lekkoatletyczne i ogólnorozwojowe dla przedszkolaków i uczniów klas 1–3 w Krakowie-Płaszowie: biegi, skoki, rzuty. Grafik 2026/2027.">
+  <link rel="canonical" href="{{PAGE_URL}}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{BRAND}}">
+  <meta property="og:locale" content="{{LOCALE}}">
+  <meta property="og:title" content="Oferta zajęć dla dzieci | {{BRAND}}">
+  <meta property="og:description" content="Zajęcia lekkoatletyczne i ogólnorozwojowe dla przedszkolaków i uczniów klas 1–3 w Krakowie-Płaszowie: biegi, skoki, rzuty. Grafik 2026/2027.">
+  <meta property="og:url" content="{{PAGE_URL}}">
+  <meta property="og:image" content="{{SITE_URL}}/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "{{BRAND}}", "item": "{{SITE_URL}}/" },
+      { "@type": "ListItem", "position": 2, "name": "Oferta zajęć", "item": "{{PAGE_URL}}" }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <main>
-    <h1>Strona została przeniesiona</h1>
-    <p><a href="../#zajecia">Przejdź do nowej strony</a></p>
+  <!-- @include header -->
+
+  <main id="main">
+    <section class="page-top">
+      <div class="wrap">
+        <p class="eyebrow">Oferta zajęć</p>
+        <h1>Zajęcia sportowe dla dzieci w Krakowie</h1>
+        <p class="lead">Lekkoatletyka i zajęcia ogólnorozwojowe dla przedszkolaków i uczniów klas 1–3. Dzieci poznają biegi, skoki, rzuty i starty z bloków, rozwijają sprawność i ducha sportowej rywalizacji.</p>
+      </div>
+    </section>
+
+    <section id="zajecia" class="section">
+      <div class="wrap two-col">
+        <div class="photo-frame">
+          <img src="../img/img_1523.jpg" width="1600" height="1067" loading="lazy" alt="Trenerka ustawia grupę dzieci w rzędzie na sali gimnastycznej">
+        </div>
+        <div>
+          <p class="eyebrow">Na zajęciach</p>
+          <h2>Bieganie, skakanie i rzucanie przez zabawę</h2>
+          <p class="section-lead">Dzieci poznają świat lekkiej atletyki: biegi, skoki, rzuty i starty z bloków. Przy okazji rozwijają koordynację, sprawność i ducha sportowej rywalizacji.</p>
+          <ul class="activities">
+            <li>
+              <span class="ico ico-1" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2h5"/></svg></span>
+              <div><h3>Biegi</h3><p>Szybkość i wytrzymałość, na sali i na bieżni.</p></div>
+            </li>
+            <li>
+              <span class="ico ico-2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 19c3-9 15-9 18 0"/><path d="M17 15l4 4-5 1"/></svg></span>
+              <div><h3>Skoki</h3><p>Ćwiczenia skocznościowe, które uczą koordynacji i odwagi.</p></div>
+            </li>
+            <li>
+              <span class="ico ico-3" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+              <div><h3>Rzuty</h3><p>Siła, celność i technika rzutu.</p></div>
+            </li>
+          </ul>
+          <p>Treningi odbywają się przy ul. Myśliwskiej w Krakowie. Dzieci trenują na sali gimnastycznej lub na obiektach zewnętrznych.</p>
+          <p class="note">Współpracujemy z KS AZS AWF Kraków. Dziecko, które złapie bakcyla, zaprosimy tam na trening próbny.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight" aria-label="Zdjęcia z zajęć">
+      <div class="wrap gallery">
+        <img src="../img/img_6060.jpg" width="900" height="1200" loading="lazy" alt="Trenerka w kółku z grupą przedszkolaków na sali gimnastycznej">
+        <img src="../img/img_1602.jpg" width="1200" height="800" loading="lazy" alt="Trenerka pokazuje dzieciom ćwiczenie równowagi na boisku">
+        <img src="../img/img_1782.jpg" width="1200" height="800" loading="lazy" alt="Dzieci i uśmiechnięta trenerka siedzą na podłodze sali gimnastycznej">
+        <img src="../img/img_1521.jpg" width="1200" height="800" loading="lazy" alt="Dzieci skaczą po niebieskich materacach na sali">
+        <img src="../img/img_1888.jpg" width="1200" height="800" loading="lazy" alt="Grupa dzieci siedzi na materacu i słucha trenera">
+        <img src="../img/img_1601.jpg" width="1200" height="800" loading="lazy" alt="Rozgrzewka z trenerką na boisku przy szkole">
+      </div>
+    </section>
+
+    <section id="grafik" class="section section-cream">
+      <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30C240 70 480 -10 720 30s480 40 720 0V60H0z"/></svg>
+      <div class="wrap">
+        <div class="center-head">
+          <p class="eyebrow">Grafik 2026/2027</p>
+          <h2>Kiedy trenujemy</h2>
+          <p class="section-lead">SP nr 47 przy ul. Myśliwskiej 64: duża sala gimnastyczna i bieżnia.</p>
+        </div>
+        <div class="slots">
+          <article class="slot slot-hot">
+            <p class="slot-tag">Wolne miejsca</p>
+            <h3>Grupa szkolna</h3>
+            <p class="slot-who">klasy 1–3</p>
+            <p class="slot-time"><span>Piątek</span> 16:45</p>
+            <a class="btn btn-block" href="../kontakt/">Zapisz dziecko</a>
+          </article>
+          <article class="slot">
+            <p class="slot-tag slot-tag-grey">Brak wolnych miejsc</p>
+            <h3>Grupa przedszkolna</h3>
+            <p class="slot-who">4–6 lat</p>
+            <p class="slot-time"><span>Środa</span> 18:15</p>
+            <a class="btn btn-outline btn-block" href="../kontakt/">Zapytaj o listę</a>
+          </article>
+          <article class="slot">
+            <p class="slot-tag slot-tag-grey">Zapisy przez CKP</p>
+            <h3>Motoryka smyka</h3>
+            <p class="slot-who">Centrum Kultury Płaszów</p>
+            <p class="slot-time"><span>Wtorek</span> 18:00</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap two-col two-col-center">
+        <div>
+          <p class="eyebrow">Zapisy</p>
+          <h2>Jak zapisać dziecko?</h2>
+          <p class="section-lead">Zapisz dziecko przez formularz, napisz e-mail albo zadzwoń. Przed zapisem przeczytaj cennik i regulamin zajęć.</p>
+        </div>
+        <div class="link-cards">
+          <a class="contact-card" href="../kontakt/"><span>Formularz zapisu</span>Zapisz się!</a>
+          <a class="contact-card" href="../cennik/"><span>Ile to kosztuje?</span>Cennik 2026/2027</a>
+          <a class="contact-card" href="../dokumenty/regulamin-2026-2027.pdf"><span>PDF</span>Regulamin zajęć</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <h2>Daj się zarazić lekką!</h2>
+            <p>Pierwsze zajęcia są darmowe. Przyprowadź dziecko i sprawdź, czy mu się spodoba.</p>
+          </div>
+          <a class="btn btn-big" href="../kontakt/">Zapisz się!</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- @include footer -->
 </body>
 </html>

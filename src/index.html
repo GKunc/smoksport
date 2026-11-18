@@ -89,7 +89,7 @@
       {
         "@type": "Question",
         "name": "Kiedy i jak płacę za zajęcia?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Płatność odbywa się po pierwszych zrealizowanych zajęciach, gdy zdecydujesz, że dziecko zostaje. Wpłacasz przelewem: semestralnie albo co miesiąc. Numer konta znajdziesz w regulaminie." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Płatność odbywa się po pierwszych zrealizowanych zajęciach, gdy zdecydujesz, że dziecko zostaje. Wpłacasz przelewem: semestralnie albo co miesiąc. Numer konta znajdziesz na stronie Cennik." }
       },
       {
         "@type": "Question",
@@ -111,8 +111,8 @@
           <h1>Lekkoatletyka <span class="underline">dla dzieci</span> w Krakowie</h1>
           <p class="lead">{{SUBHEADLINE}}</p>
           <div class="hero-actions">
-            <a class="btn btn-big" href="#kontakt">Zapisz na darmowy trening</a>
-            <a class="btn btn-outline" href="#grafik">Zobacz grafik</a>
+            <a class="btn btn-big" href="kontakt/">Zapisz na darmowy trening</a>
+            <a class="btn btn-outline" href="oferta-dzieci/#grafik">Zobacz grafik</a>
           </div>
           <ul class="ticks">
             <li>Dzieci od 4 lat</li>
@@ -162,39 +162,7 @@
             </li>
           </ul>
           <p class="note">Współpracujemy z KS AZS AWF Kraków. Dziecko, które złapie bakcyla, zaprosimy tam na trening próbny.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="grafik" class="section section-cream">
-      <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30C240 70 480 -10 720 30s480 40 720 0V60H0z"/></svg>
-      <div class="wrap">
-        <div class="center-head">
-          <p class="eyebrow">Grafik 2026/2027</p>
-          <h2>Kiedy trenujemy</h2>
-          <p class="section-lead">SP nr 47 przy ul. Myśliwskiej 64: duża sala gimnastyczna i bieżnia.</p>
-        </div>
-        <div class="slots">
-          <article class="slot slot-hot">
-            <p class="slot-tag">Wolne miejsca</p>
-            <h3>Grupa szkolna</h3>
-            <p class="slot-who">klasy 1–3</p>
-            <p class="slot-time"><span>Piątek</span> 16:45</p>
-            <a class="btn btn-block" href="#kontakt">Zapisz dziecko</a>
-          </article>
-          <article class="slot">
-            <p class="slot-tag slot-tag-grey">Brak wolnych miejsc</p>
-            <h3>Grupa przedszkolna</h3>
-            <p class="slot-who">4–6 lat</p>
-            <p class="slot-time"><span>Środa</span> 18:15</p>
-            <a class="btn btn-outline btn-block" href="#kontakt">Zapytaj o listę</a>
-          </article>
-          <article class="slot">
-            <p class="slot-tag slot-tag-grey">Zapisy przez CKP</p>
-            <h3>Motoryka smyka</h3>
-            <p class="slot-who">Centrum Kultury Płaszów</p>
-            <p class="slot-time"><span>Wtorek</span> 18:00</p>
-          </article>
+          <a class="btn btn-outline more-btn" href="oferta-dzieci/">Pełna oferta i grafik</a>
         </div>
       </div>
     </section>
@@ -205,7 +173,7 @@
           <p class="eyebrow eyebrow-light">Cennik</p>
           <h2>Najpierw trening, potem decyzja</h2>
           <p class="section-lead">Pierwsze zajęcia są darmowe. Płacisz przelewem dopiero po nich, jeśli dziecko chce zostać.</p>
-          <a class="text-link" href="https://www.smoksport.pl/wp-content/uploads/2026/09/regulamin-smoksport-2026_2027-2.pdf">Regulamin zajęć 2026/2027 (PDF)</a>
+          <a class="btn btn-sun" href="cennik/">Szczegóły cennika</a>
         </div>
         <div class="prices">
           <div class="price">
@@ -289,7 +257,7 @@
           </details>
           <details>
             <summary>Kiedy i jak płacę za zajęcia?</summary>
-            <p>Płatność odbywa się po pierwszych zrealizowanych zajęciach, gdy zdecydujesz, że dziecko zostaje. Wpłacasz przelewem: semestralnie albo co miesiąc. Numer konta znajdziesz w regulaminie.</p>
+            <p>Płatność odbywa się po pierwszych zrealizowanych zajęciach, gdy zdecydujesz, że dziecko zostaje. Wpłacasz przelewem: semestralnie albo co miesiąc. Numer konta znajdziesz na stronie Cennik.</p>
           </details>
           <details>
             <summary>Czy jest zniżka dla rodzeństwa?</summary>
@@ -299,57 +267,15 @@
       </div>
     </section>
 
-    <section id="kontakt" class="section">
-      <div class="wrap two-col">
-        <div class="contact-copy">
-          <p class="eyebrow">Daj się zarazić lekką!</p>
-          <h2>Zapisz dziecko na pierwszy, darmowy trening</h2>
-          <p class="section-lead">Wypełnij formularz zapisu, a odezwiemy się z terminem. Wolisz porozmawiać? Zadzwoń albo napisz.</p>
-          <div class="contact-cards">
-            <a class="contact-card" href="tel:+48570080490"><span>Zadzwoń</span>+48&nbsp;570&nbsp;080&nbsp;490</a>
-            <a class="contact-card" href="mailto:{{CONTACT_EMAIL}}"><span>Napisz</span>{{CONTACT_EMAIL}}</a>
+    <section id="kontakt" class="section section-tight">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <h2>Daj się zarazić lekką!</h2>
+            <p>Zapisz dziecko na pierwszy, darmowy trening. Odezwiemy się z terminem.</p>
           </div>
+          <a class="btn btn-big" href="kontakt/">Zapisz się!</a>
         </div>
-        <!-- @if !FORM_ENDPOINT -->
-        <!-- Until the form worker is set up, sign-ups go to the existing Google Form (the same one the old site used). -->
-        <div class="form-card signup-card">
-          <h3>Formularz zapisu</h3>
-          <p>Zapisz dziecko przez nasz formularz online. Odezwiemy się mailowo ze szczegółami pierwszego, darmowego treningu.</p>
-          <a class="btn btn-block" href="https://docs.google.com/forms/d/e/1FAIpQLSeXHFq6tYm8gBV1Si9iZvXjlh3dZ8hs0MTNYFBVsJ081wYpow/viewform" rel="noopener">{{CTA_LABEL}}</a>
-          <p class="form-note">Formularz otwiera się w Google Forms. Przed zapisem przeczytaj <a href="dokumenty/regulamin-2026-2027.pdf">regulamin zajęć</a> i <a href="dokumenty/klauzula-rodo-2026-2027.pdf">klauzulę RODO</a>.</p>
-        </div>
-        <!-- @endif -->
-        <!-- @if FORM_ENDPOINT -->
-        <form id="lead-form" class="form-card" action="{{FORM_ENDPOINT}}" method="post"
-              data-msg-sending="Wysyłanie…"
-              data-msg-success="Dziękujemy! Odezwiemy się wkrótce."
-              data-msg-error="Coś poszło nie tak. Spróbuj ponownie albo zadzwoń.">
-          <label>Imię rodzica <input type="text" name="name" autocomplete="name"></label>
-          <label>E-mail <input type="email" name="email" required autocomplete="email"></label>
-          <label>Telefon <input type="tel" name="phone" autocomplete="tel"></label>
-          <label>Grupa
-            <select name="group">
-              <option>Grupa szkolna (kl. 1–3), piątek 16:45</option>
-              <option>Grupa przedszkolna (4–6 lat), lista rezerwowa</option>
-              <option>Jeszcze nie wiem</option>
-            </select>
-          </label>
-          <label class="full">Wiadomość (wiek dziecka, pytania) <textarea name="message" rows="3"></textarea></label>
-          <input type="hidden" name="_subject" value="Nowe zgłoszenie ze strony {{BRAND}}">
-          <input type="hidden" name="page" value="{{PAGE_URL}}">
-          <!-- @if TURNSTILE_SITE_KEY -->
-          <div class="turnstile" data-turnstile="{{TURNSTILE_SITE_KEY}}"></div>
-          <!-- @endif -->
-          <!-- @if FORM_ACCESS_KEY -->
-          <input type="hidden" name="access_key" value="{{FORM_ACCESS_KEY}}">
-          <!-- @endif -->
-          <!-- honeypot: real visitors never see or fill this; bots do -->
-          <label class="hp" aria-hidden="true">Zostaw puste <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
-          <button class="btn btn-block" type="submit">{{CTA_LABEL}}</button>
-          <p class="form-note">Twoje dane wykorzystamy tylko, by odpowiedzieć. Zobacz <a href="privacy.html">politykę prywatności</a>.</p>
-          <p id="form-status" role="status" aria-live="polite"></p>
-        </form>
-        <!-- @endif -->
       </div>
     </section>
   </main>

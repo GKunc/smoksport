@@ -17,6 +17,9 @@
 ## Strony
 
 - [Strona główna]({{SITE_URL}}/): {{PAGE_TITLE}}
+- [Oferta zajęć]({{SITE_URL}}/oferta-dzieci/): opis zajęć dla dzieci i grafik 2026/2027
+- [Cennik]({{SITE_URL}}/cennik/): ceny, zniżki i jak płacić
+- [Zapisz się]({{SITE_URL}}/kontakt/): formularz zapisu, telefon i e-mail
 - [Polityka prywatności]({{SITE_URL}}/privacy.html): jak przetwarzamy dane osobowe
 - [Regulamin 2026/2027]({{SITE_URL}}/dokumenty/regulamin-2026-2027.pdf): regulamin zajęć (PDF)
 - [Cennik i harmonogram 2026/2027]({{SITE_URL}}/dokumenty/cennik-i-harmonogram-2026-2027.pdf): PDF
