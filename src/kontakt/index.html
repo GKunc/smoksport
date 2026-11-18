@@ -53,7 +53,6 @@
           </ul>
         </div>
         <!-- @if !FORM_ENDPOINT -->
-        <!-- Until the form worker is set up, sign-ups go to the existing Google Form (the same one the old site used). -->
         <div class="form-card signup-card">
           <h3>Formularz zapisu</h3>
           <p>Zapisz dziecko przez nasz formularz online. Odezwiemy się mailowo ze szczegółami pierwszego, darmowego treningu.</p>
@@ -85,7 +84,6 @@
           <!-- @if FORM_ACCESS_KEY -->
           <input type="hidden" name="access_key" value="{{FORM_ACCESS_KEY}}">
           <!-- @endif -->
-          <!-- honeypot: real visitors never see or fill this; bots do -->
           <label class="hp" aria-hidden="true">Zostaw puste <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
           <button class="btn btn-block" type="submit">{{CTA_LABEL}}</button>
           <p class="form-note">Twoje dane wykorzystamy tylko, by odpowiedzieć. Zobacz <a href="../privacy.html">politykę prywatności</a>.</p>
