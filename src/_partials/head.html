@@ -8,6 +8,22 @@
   <!-- @if HAS_POSTS -->
   <link rel="alternate" type="application/rss+xml" title="{{BRAND}} blog" href="{{ROOT}}blog/feed.xml">
   <!-- @endif -->
+  <script>
+    /* Theme switch: applies the remembered choice before the page paints (no flash), then handles the header button. */
+    (function (d) {
+      d.classList.add('js');
+      try { if (localStorage.getItem('theme') === 'dark') d.dataset.theme = 'dark'; } catch (e) {}
+      var sync = function () { var b = document.querySelector('.theme-toggle'); if (b) b.setAttribute('aria-pressed', d.dataset.theme === 'dark'); };
+      document.addEventListener('DOMContentLoaded', sync);
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest || !e.target.closest('.theme-toggle')) return;
+        var dark = d.dataset.theme !== 'dark';
+        if (dark) d.dataset.theme = 'dark'; else delete d.dataset.theme;
+        sync();
+        try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+      });
+    })(document.documentElement);
+  </script>
   <link rel="preload" href="{{ROOT}}fonts/baloo-2-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ROOT}}fonts/baloo-2-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ROOT}}css/styles.css">
