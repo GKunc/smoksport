@@ -6,22 +6,26 @@ Short, reusable values (brand, colours, URL, title, headline, CTA, form endpoint
 live in `site.config.json`, not here: the build puts them into every page. This file holds everything else.
 
 ## Identity
-- LOGO: (path or URL to an SVG/PNG logo, optional; otherwise the favicon is BRAND_INITIAL on THEME_COLOR)
+- LOGO: brak (favicon = litera S na fiolecie)
 - Social profiles (become schema.org `sameAs`):
-  -
+  - https://www.facebook.com/profile.php?id=100091447430165
+  - https://www.instagram.com/smoksport/
 
 ## Hosting
-- REPO_NAME: (new GitHub repo name, e.g. acme-landing)
-- REPO_OWNER: (GitHub user or organization)
-- CUSTOM_DOMAIN: (optional, e.g. www.acme.com; leave empty to use github.io)
+- REPO_NAME: smoksport
+- REPO_OWNER: GKunc
+- CUSTOM_DOMAIN: www.smoksport.pl (docelowo; na razie adres github.io, dopóki stara strona na WordPressie działa)
 
 ## Business
-- What is offered:
-- Target audience:
-- Main problem solved:
-- Unique selling points:
-- Price / offer:
-- Location / service area: (if local, Claude adds LocalBusiness schema)
+- What is offered: zajęcia ogólnorozwojowe i lekkoatletyczne dla dzieci (biegi, skoki, rzuty, starty z bloków); damskie wyjazdy biegowe (rozbieganekobiety.pl)
+- Target audience: rodzice dzieci 4–6 lat i uczniów klas 1–3 z Krakowa (Płaszów)
+- Main problem solved: wszechstronny rozwój ruchowy dziecka przez zabawę i elementy lekkiej atletyki
+- Unique selling points: trenerzy to byli lekkoatleci (AZS AWF Kraków, medale MP); współpraca z KS AZS AWF Kraków (zaangażowane dzieci zapraszane na trening próbny); pierwsze zajęcia gratis
+- Price / offer: sezon 2026/2027, I semestr: 600 zł semestralnie lub 160 zł miesięcznie (4 płatności); rodzeństwo −50 zł od dziecka w opłacie semestralnej; płatność po pierwszych zajęciach
+- Location / service area: SP nr 47, ul. Myśliwska 64, Kraków-Płaszów (duża sala gimnastyczna, bieżnia); CKP Płaszów
+- Grafik: grupa przedszkolna 4–6 lat środa 18:15 (brak wolnych miejsc); grupa szkolna kl. 1–3 piątek 16:45; CKP Płaszów „Motoryka smyka” wtorek 18:00 (zapisy przez CKP)
+- Trenerzy: Magdalena Kunc, Sara Drwal, Grzegorz Kunc (bio z obecnej strony smoksport.pl)
+- Kontakt: +48 570 080 490, smoksportkrakow@gmail.com
 
 ## Proof (real only)
 - Testimonials (quote, name, role, permission to publish):
@@ -39,21 +43,21 @@ live in `site.config.json`, not here: the build puts them into every page. This 
 - AUTHOR_BIO: (one or two sentences on real expertise)
 
 ## Voice
-- Tone:
+- Tone: ciepły, energiczny, konkretny; mówimy do rodzica
 - Words to use / avoid:
 
 ## SEO
-- Primary keyword:
-- Secondary keywords:
+- Primary keyword: lekkoatletyka dla dzieci Kraków
+- Secondary keywords: zajęcia sportowe dla dzieci Płaszów, zajęcia ogólnorozwojowe dla przedszkolaków
 - Competitors / reference sites:
 
 ## Forms, analytics, compliance
-- Contact form: form worker with autoreply (default) | external service (Formspree / Web3Forms…, no autoreply)
+- Contact form: na razie zapisy przez istniejący Google Form (ten sam co na starej stronie); formularz na stronie z autoodpowiedzią (form worker) po założeniu kont Cloudflare + Resend
 - Who receives enquiries: (email address; FORM_NOTIFY_TO in site.config.json, empty = CONTACT_EMAIL)
 - Reply promise for the autoreply: (e.g. "within one business day"; leave empty to promise no time)
 - Named person to sign the autoreply: (optional)
-- Analytics wanted: (none / plausible / goatcounter / cloudflare / ga4; set as ANALYTICS in site.config.json. GA4 adds a cookie banner)
-- AI_CRAWLERS: allow-all | search-only (search-only blocks model-training bots, keeps AI search)
+- Analytics wanted: none
+- AI_CRAWLERS: allow-all
 
 ## Facts Claude must not invent
 - (claims, numbers, testimonials, legal details)

@@ -1,0 +1,99 @@
+<!-- @vars
+{
+  "POST_TITLE": "Trening z mistrzem świata",
+  "POST_DESCRIPTION": "Podsumowanie treningu lekkoatletycznego dla dzieci, który poprowadził Grzegorz Kunc, mistrz świata w duathlonie: sprinty, skok w dal i rzuty.",
+  "DATE": "2023-11-01",
+  "DATE_MODIFIED": "",
+  "POST_IMAGE": "",
+  "CTA_HEADING": "Trenuj z nami",
+  "CTA_TEXT": "Zapisz dziecko na pierwszy, darmowy trening lekkoatletyczny w Płaszowie."
+}
+-->
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+  <!-- @include head -->
+  <title>{{POST_TITLE}} | {{BRAND}}</title>
+  <meta name="description" content="{{POST_DESCRIPTION}}">
+  <link rel="canonical" href="{{PAGE_URL}}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="{{BRAND}}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{BRAND}}">
+  <meta property="og:locale" content="{{LOCALE}}">
+  <meta property="og:title" content="{{POST_TITLE}}">
+  <meta property="og:description" content="{{POST_DESCRIPTION}}">
+  <meta property="og:url" content="{{PAGE_URL}}">
+  <meta property="og:image" content="{{POST_IMAGE}}">
+  <meta property="article:published_time" content="{{DATE}}">
+  <meta property="article:modified_time" content="{{DATE_MODIFIED}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{POST_TITLE}}">
+  <meta name="twitter:description" content="{{POST_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{POST_IMAGE}}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "{{PAGE_URL}}#article",
+        "headline": "{{POST_TITLE}}",
+        "description": "{{POST_DESCRIPTION}}",
+        "image": "{{POST_IMAGE}}",
+        "datePublished": "{{DATE}}",
+        "dateModified": "{{DATE_MODIFIED}}",
+        "inLanguage": "{{LANG}}",
+        "mainEntityOfPage": "{{PAGE_URL}}",
+        "author": { "@id": "{{SITE_URL}}/#organization" },
+        "publisher": { "@id": "{{SITE_URL}}/#organization" },
+        "isPartOf": { "@id": "{{SITE_URL}}/blog/#blog" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "{{BRAND}}", "item": "{{SITE_URL}}/" },
+          { "@type": "ListItem", "position": 2, "name": "Aktualności", "item": "{{SITE_URL}}/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "{{POST_TITLE}}", "item": "{{PAGE_URL}}" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- @include header -->
+  <main id="main" class="section">
+    <nav class="breadcrumb" aria-label="Okruszki">
+      <ol>
+        <li><a href="../">{{BRAND}}</a></li>
+        <li><a href="./">Aktualności</a></li>
+        <li aria-current="page">{{POST_TITLE}}</li>
+      </ol>
+    </nav>
+    <article>
+      <h1>{{POST_TITLE}}</h1>
+      <p class="post-meta">{{BRAND}} · <time datetime="{{DATE}}">{{DATE}}</time></p>
+      <p>Drodzy rodzice, opiekunowie i nasi utalentowani młodzi sportowcy! Chcielibyśmy podzielić się z Wami podsumowaniem treningu lekkoatletycznego, który odbył się pod okiem Grzegorza Kunca, mistrza świata w duathlonie. Był to wyjątkowy dzień pełen aktywności i niesamowitej nauki dla naszych młodych uczestników.</p>
+      <h2>Trener mistrz świata</h2>
+      <p>Grzegorz Kunc prowadził trening, dzieląc się z dziećmi swoim ogromnym doświadczeniem sportowym. Jego cierpliwość, motywacja i indywidualne podejście do każdego uczestnika sprawiły, że trening był wyjątkowy. Dzieci miały okazję uczyć się od jednego z najlepszych w swojej dziedzinie, co jest nie tylko inspirujące, ale także edukacyjne.</p>
+      <h2>Co robiliśmy na treningu?</h2>
+      <ul>
+        <li><strong>Rozgrzewka i stretching:</strong> dzieci uczestniczyły w profesjonalnej rozgrzewce, która pomogła przygotować ciało do treningu.</li>
+        <li><strong>Biegi sprinterskie:</strong> Grzegorz Kunc przekazał cenne wskazówki dotyczące techniki sprintu.</li>
+        <li><strong>Skok w dal:</strong> dzieci doskonaliły swoje umiejętności w skoku w dal pod okiem eksperta.</li>
+        <li><strong>Rzuty:</strong> trening rzutów dał dzieciom szansę na doskonalenie umiejętności w różnych dyscyplinach.</li>
+      </ul>
+      <h2>Zaangażowanie dzieci</h2>
+      <p>Nasze młode talenty wykazały się ogromnym zaangażowaniem i determinacją. Byliście świetni, drogie dzieci! Wasze podejście i chęć do nauki były inspirujące.</p>
+      <p>Jeśli macie pytania lub sugestie dotyczące treningów, napiszcie na <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a> albo zadzwońcie: <a href="tel:+48570080490">+48&nbsp;570&nbsp;080&nbsp;490</a>.</p>
+      <aside class="cta-box">
+        <h2>{{CTA_HEADING}}</h2>
+        <p>{{CTA_TEXT}}</p>
+        <a class="btn" href="../#kontakt">{{CTA_LABEL}}</a>
+      </aside>
+    </article>
+  </main>
+  <!-- @include footer -->
+</body>
+</html>

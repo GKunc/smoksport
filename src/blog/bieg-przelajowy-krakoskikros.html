@@ -1,0 +1,90 @@
+<!-- @vars
+{
+  "POST_TITLE": "Bieg przełajowy KRAKOSKIKROS",
+  "POST_DESCRIPTION": "Gratulacje dla dzieci, które pobiegły w pierwszym krakowskim biegu przełajowym KRAKOSKIKROS, zorganizowanym przez AZS AWF Kraków Masters.",
+  "DATE": "2023-11-18",
+  "DATE_MODIFIED": "",
+  "POST_IMAGE": "",
+  "CTA_HEADING": "Chcesz, aby Twoje dziecko mogło cieszyć się sportem?",
+  "CTA_TEXT": "Dołącz do nas. Pierwszy trening jest darmowy."
+}
+-->
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+  <!-- @include head -->
+  <title>{{POST_TITLE}} | {{BRAND}}</title>
+  <meta name="description" content="{{POST_DESCRIPTION}}">
+  <link rel="canonical" href="{{PAGE_URL}}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="{{BRAND}}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{BRAND}}">
+  <meta property="og:locale" content="{{LOCALE}}">
+  <meta property="og:title" content="{{POST_TITLE}}">
+  <meta property="og:description" content="{{POST_DESCRIPTION}}">
+  <meta property="og:url" content="{{PAGE_URL}}">
+  <meta property="og:image" content="{{POST_IMAGE}}">
+  <meta property="article:published_time" content="{{DATE}}">
+  <meta property="article:modified_time" content="{{DATE_MODIFIED}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{POST_TITLE}}">
+  <meta name="twitter:description" content="{{POST_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{POST_IMAGE}}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "{{PAGE_URL}}#article",
+        "headline": "{{POST_TITLE}}",
+        "description": "{{POST_DESCRIPTION}}",
+        "image": "{{POST_IMAGE}}",
+        "datePublished": "{{DATE}}",
+        "dateModified": "{{DATE_MODIFIED}}",
+        "inLanguage": "{{LANG}}",
+        "mainEntityOfPage": "{{PAGE_URL}}",
+        "author": { "@id": "{{SITE_URL}}/#organization" },
+        "publisher": { "@id": "{{SITE_URL}}/#organization" },
+        "isPartOf": { "@id": "{{SITE_URL}}/blog/#blog" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "{{BRAND}}", "item": "{{SITE_URL}}/" },
+          { "@type": "ListItem", "position": 2, "name": "Aktualności", "item": "{{SITE_URL}}/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "{{POST_TITLE}}", "item": "{{PAGE_URL}}" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- @include header -->
+  <main id="main" class="section">
+    <nav class="breadcrumb" aria-label="Okruszki">
+      <ol>
+        <li><a href="../">{{BRAND}}</a></li>
+        <li><a href="./">Aktualności</a></li>
+        <li aria-current="page">{{POST_TITLE}}</li>
+      </ol>
+    </nav>
+    <article>
+      <h1>{{POST_TITLE}}</h1>
+      <p class="post-meta">{{BRAND}} · <time datetime="{{DATE}}">{{DATE}}</time></p>
+      <p>Serdeczne gratulacje dla wszystkich dzieci, które wzięły udział w pierwszym biegu crossowym dla amatorów (i nie tylko) w Krakowie! Wasz niesamowity wysiłek i determinacja zasługują na ogromne uznanie. Chcielibyśmy również serdecznie pogratulować organizatorom, AZS AWF Kraków Masters, udanej inicjatywy!</p>
+      <p>KRAKOSKIKROS przejdzie do historii. W sekrecie zdradzimy, że w planach jest kolejna edycja…</p>
+      <p>Biegi przełajowe to nie tylko sport, to również wyzwanie ducha i determinacji. Dziewczynki, to Wasz pierwszy krok w fascynującej rywalizacji sportowej na wysokim poziomie. Gratulujemy odwagi i wytrwałości – to dopiero początek Waszej sportowej przygody! Wspaniała robota!</p>
+      <p>Śledź nasze wydarzenia w Krakowie na <a href="https://www.facebook.com/profile.php?id=100091447430165" rel="noopener">Facebooku</a>.</p>
+      <aside class="cta-box">
+        <h2>{{CTA_HEADING}}</h2>
+        <p>{{CTA_TEXT}}</p>
+        <a class="btn" href="../#kontakt">{{CTA_LABEL}}</a>
+      </aside>
+    </article>
+  </main>
+  <!-- @include footer -->
+</body>
+</html>

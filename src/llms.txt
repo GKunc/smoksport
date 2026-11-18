@@ -4,14 +4,26 @@
 
 {{LLMS_SUMMARY}}
 
-## Pages
+## Najważniejsze informacje
 
-- [Home]({{SITE_URL}}/): {{PAGE_TITLE}}
-- [Privacy policy]({{SITE_URL}}/privacy.html): how personal data is handled
+- Zajęcia: ogólnorozwojowe z elementami lekkiej atletyki (biegi, skoki, rzuty, koordynacja), w formie gier i zabaw, bez presji na wynik.
+- Miejsce: SP nr 47, ul. Myśliwska 64, Kraków-Płaszów (duża sala gimnastyczna i bieżnia).
+- Grafik 2026/2027: grupa szkolna (klasy 1–3) w piątki o 16:45; grupa przedszkolna (4–6 lat) w środy o 18:15 (obecnie brak wolnych miejsc); „Motoryka smyka” w CKP Płaszów we wtorki o 18:00 (zapisy przez CKP).
+- Cena (I semestr 2026/2027): 600 zł za semestr albo 160 zł miesięcznie (4 płatności); rodzeństwo −50 zł od dziecka w opłacie semestralnej; płatność po pierwszych zajęciach.
+- Pierwszy trening jest darmowy.
+- Współpraca z KS AZS AWF Kraków: zaangażowane dzieci są zapraszane na trening próbny.
+- Kontakt: {{CONTACT_EMAIL}}, tel. +48 570 080 490.
+
+## Strony
+
+- [Strona główna]({{SITE_URL}}/): {{PAGE_TITLE}}
+- [Polityka prywatności]({{SITE_URL}}/privacy.html): jak przetwarzamy dane osobowe
+- [Regulamin 2026/2027]({{SITE_URL}}/dokumenty/regulamin-2026-2027.pdf): regulamin zajęć (PDF)
+- [Cennik i harmonogram 2026/2027]({{SITE_URL}}/dokumenty/cennik-i-harmonogram-2026-2027.pdf): PDF
 
 <!-- @if HAS_POSTS -->
-## Blog
+## Aktualności
 
-- [All articles]({{SITE_URL}}/blog/): index of every post
+- [Wszystkie wpisy]({{SITE_URL}}/blog/): zapowiedzi i relacje z zajęć
 <!-- @posts -->
 <!-- @endif -->

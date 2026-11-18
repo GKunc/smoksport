@@ -2,7 +2,7 @@
 <html lang="{{LANG}}">
 <head>
   <!-- @include head -->
-  <title>{{BLOG_TITLE}} | {{BRAND}}</title>
+  <title>{{BLOG_TITLE}}: lekkoatletyka dla dzieci | {{BRAND}}</title>
   <meta name="description" content="{{BLOG_DESCRIPTION}}">
   <link rel="canonical" href="{{PAGE_URL}}">
   <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
       {
         "@type": "Blog",
         "@id": "{{SITE_URL}}/blog/#blog",
-        "name": "{{BRAND}} blog",
+        "name": "{{BLOG_TITLE}} – {{BRAND}}",
         "url": "{{SITE_URL}}/blog/",
         "inLanguage": "{{LANG}}",
         "publisher": { "@id": "{{SITE_URL}}/#organization" }
@@ -32,7 +32,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "{{BRAND}}", "item": "{{SITE_URL}}/" },
-          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{SITE_URL}}/blog/" }
+          { "@type": "ListItem", "position": 2, "name": "Aktualności", "item": "{{SITE_URL}}/blog/" }
         ]
       }
     ]
@@ -42,7 +42,9 @@
 <body>
   <!-- @include header -->
   <main id="main" class="section">
-    <h1>Blog</h1>
+    <div class="page-hero page-hero-flush"><p class="eyebrow">Aktualności</p>
+    <h1>Zapowiedzi i relacje z zajęć Smok Sport</h1>
+    <p class="lead">{{BLOG_DESCRIPTION}}</p></div>
     <!-- The list is generated at build time from the @vars of each post in this folder, newest first. -->
     <ul class="post-list" id="post-list">
       <!-- @posts -->

@@ -2,8 +2,8 @@
 <html lang="{{LANG}}">
 <head>
   <!-- @include head -->
-  <title>Privacy policy | {{BRAND}}</title>
-  <meta name="description" content="How {{BRAND}} collects, uses and protects your personal data, which services process it, and how to exercise your rights.">
+  <title>Polityka prywatności | {{BRAND}}</title>
+  <meta name="description" content="Jak {{BRAND}} zbiera, wykorzystuje i chroni Twoje dane osobowe, kto je przetwarza i jak skorzystać ze swoich praw.">
   <link rel="canonical" href="{{PAGE_URL}}">
 </head>
 <body>
@@ -11,49 +11,50 @@
   <!-- Generic starting point, not legal advice. The business owner must review it before release. -->
   <main id="main" class="section">
     <article>
-      <h1>Privacy policy</h1>
-      <p class="post-meta">Last updated <time datetime="{{PRIVACY_UPDATED}}">{{PRIVACY_UPDATED}}</time></p>
+      <h1>Polityka prywatności</h1>
+      <p class="post-meta">Ostatnia aktualizacja: <time datetime="{{PRIVACY_UPDATED}}">{{PRIVACY_UPDATED}}</time></p>
 
-      <h2>Who is responsible</h2>
-      <p>{{LEGAL_ENTITY}} ("we") is responsible for the personal data collected on this website. Contact: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>.</p>
+      <h2>Administrator danych</h2>
+      <p>Administratorem danych osobowych zbieranych na tej stronie jest {{LEGAL_ENTITY}}. Kontakt: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>.</p>
 
-      <h2>What we collect and why</h2>
-      <p>When you submit the contact form we receive your email address and, if you give them, your name and message. We use them only to reply to you and to send the information you asked for. The legal basis is taking steps at your request before a possible contract and our legitimate interest in answering enquiries.</p>
-      <p>Form submissions are processed by {{FORM_PROVIDER}} on our behalf.</p>
+      <h2>Jakie dane zbieramy i po co</h2>
+      <p>Gdy piszesz do nas e-mailem lub dzwonisz, otrzymujemy Twój adres e-mail lub numer telefonu oraz treść wiadomości. Używamy ich wyłącznie, żeby odpowiedzieć i przekazać informacje, o które prosisz. Podstawą prawną jest podjęcie działań na Twoje żądanie przed zawarciem umowy oraz nasz prawnie uzasadniony interes w odpowiadaniu na zapytania.</p>
+      <!-- @if FORM_PROVIDER -->
+      <p>Wiadomości z formularza kontaktowego przetwarza w naszym imieniu {{FORM_PROVIDER}}.</p>
+      <!-- @endif -->
       <!-- @if EMAIL_FROM -->
-      <p>After you send the form we email you one automatic confirmation. We do not add you to any mailing list.</p>
+      <p>Po wysłaniu formularza otrzymasz od nas jedną automatyczną wiadomość z potwierdzeniem. Nie zapisujemy Cię na żadną listę mailingową.</p>
       <!-- @endif -->
       <!-- @if TURNSTILE_SITE_KEY -->
-      <p>To keep out spam bots, the form uses Cloudflare Turnstile (Cloudflare, Inc.) when you start filling it in. It checks your browser for signs of automation and does not set advertising cookies.</p>
+      <p>Żeby chronić formularz przed botami, korzystamy z Cloudflare Turnstile (Cloudflare, Inc.), gdy zaczynasz go wypełniać. Sprawdza on oznaki automatyzacji w przeglądarce i nie ustawia reklamowych plików cookies.</p>
       <!-- @endif -->
 
-      <h2>Analytics and cookies</h2>
-      <!-- One block is kept, matching ANALYTICS in site.config.json. -->
+      <h2>Statystyki i pliki cookies</h2>
       <!-- @if !ANALYTICS -->
-      <p>We do not use analytics tools, and this website does not set cookies.</p>
+      <p>Nie używamy narzędzi analitycznych, a ta strona nie ustawia plików cookies.</p>
       <!-- @endif -->
       <!-- @if ANALYTICS=plausible -->
-      <p>We count visits with Plausible Analytics. It does not set cookies and does not collect personal data; we only see totals such as page views and referring sites.</p>
+      <p>Odwiedziny liczymy za pomocą Plausible Analytics. Nie ustawia ono plików cookies i nie zbiera danych osobowych; widzimy tylko sumy, np. liczbę wyświetleń i źródła ruchu.</p>
       <!-- @endif -->
       <!-- @if ANALYTICS=goatcounter -->
-      <p>We count visits with GoatCounter. It does not set cookies and does not collect personal data; we only see totals such as page views and referring sites.</p>
+      <p>Odwiedziny liczymy za pomocą GoatCounter. Nie ustawia ono plików cookies i nie zbiera danych osobowych; widzimy tylko sumy, np. liczbę wyświetleń i źródła ruchu.</p>
       <!-- @endif -->
       <!-- @if ANALYTICS=cloudflare -->
-      <p>We count visits with Cloudflare Web Analytics. It does not set cookies and does not track individual visitors; we only see totals such as page views and referring sites.</p>
+      <p>Odwiedziny liczymy za pomocą Cloudflare Web Analytics. Nie ustawia ono plików cookies i nie śledzi pojedynczych osób; widzimy tylko sumy, np. liczbę wyświetleń i źródła ruchu.</p>
       <!-- @endif -->
       <!-- @if ANALYTICS=ga4 -->
-      <p>If you agree in the cookie banner, we use Google Analytics 4, provided by Google Ireland Ltd., to understand how visitors use this site. It sets cookies (names starting with <code>_ga</code>) and processes data such as the pages you visit, your device and browser, and your approximate location. Google may process this data in the USA. The legal basis is your consent.</p>
-      <p>Google Analytics is not loaded until you click "Accept". You can change your choice at any time with "Cookie settings" at the bottom of every page; rejecting removes the cookies.</p>
+      <p>Jeśli wyrazisz zgodę w banerze cookies, korzystamy z Google Analytics 4 (Google Ireland Ltd.), żeby zrozumieć, jak odwiedzające korzystają ze strony. Narzędzie ustawia pliki cookies (o nazwach zaczynających się od <code>_ga</code>) i przetwarza dane takie jak odwiedzane podstrony, urządzenie, przeglądarka i przybliżona lokalizacja. Google może przetwarzać te dane w USA. Podstawą prawną jest Twoja zgoda.</p>
+      <p>Google Analytics nie ładuje się, dopóki nie klikniesz „Akceptuję”. Swój wybór możesz zmienić w każdej chwili przyciskiem „Ustawienia cookies” na dole strony; odrzucenie usuwa pliki cookies.</p>
       <!-- @endif -->
 
       <h2>Hosting</h2>
-      <p>This website is hosted on GitHub Pages (GitHub, Inc.). GitHub may log visitors' IP addresses for security and operation of the service.</p>
+      <p>Strona jest hostowana w GitHub Pages (GitHub, Inc.). GitHub może zapisywać adresy IP odwiedzających w celach bezpieczeństwa i działania usługi.</p>
 
-      <h2>How long we keep data</h2>
-      <p>We keep your email address only as long as needed to handle your enquiry, or until you ask us to delete it.</p>
+      <h2>Jak długo przechowujemy dane</h2>
+      <p>Twoje dane kontaktowe przechowujemy tylko tak długo, jak to potrzebne do obsługi zapytania, albo do czasu, gdy poprosisz o ich usunięcie.</p>
 
-      <h2>Your rights</h2>
-      <p>You can ask to access, correct, export or delete your data, or withdraw consent at any time, by writing to <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>. You also have the right to complain to your local data protection authority.</p>
+      <h2>Twoje prawa</h2>
+      <p>Masz prawo dostępu do swoich danych, ich sprostowania, przeniesienia lub usunięcia oraz cofnięcia zgody w dowolnym momencie – napisz na <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>. Możesz też złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (PUODO).</p>
     </article>
   </main>
   <!-- @include footer -->

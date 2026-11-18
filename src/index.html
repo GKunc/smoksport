@@ -6,6 +6,7 @@
   <meta name="description" content="{{META_DESCRIPTION}}">
   <link rel="canonical" href="{{PAGE_URL}}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="preload" href="img/img_8053.jpg" as="image" fetchpriority="high">
   <!-- @if GOOGLE_SITE_VERIFICATION -->
   <meta name="google-site-verification" content="{{GOOGLE_SITE_VERIFICATION}}">
   <!-- @endif -->
@@ -33,13 +34,26 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "SportsActivityLocation"],
         "@id": "{{SITE_URL}}/#organization",
         "name": "{{BRAND}}",
         "url": "{{SITE_URL}}/",
         "logo": "{{SITE_URL}}/icon-512.png",
+        "image": "{{SITE_URL}}/img/img_8053.jpg",
         "description": "{{META_DESCRIPTION}}",
-        "sameAs": []
+        "telephone": "+48570080490",
+        "email": "{{CONTACT_EMAIL}}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Myśliwska 64",
+          "addressLocality": "Kraków",
+          "addressCountry": "PL"
+        },
+        "areaServed": "Kraków",
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=100091447430165",
+          "https://www.instagram.com/smoksport/"
+        ]
       },
       {
         "@type": "WebSite",
@@ -59,8 +73,28 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Question one?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Answer one." }
+        "name": "Od ilu lat dziecko może trenować?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Grupy prowadzimy już dla dzieci od 4. roku życia. Przedszkolaki (4–6 lat) trenują w grupie przedszkolnej, uczniowie klas 1–3 w grupie szkolnej." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy pierwsze zajęcia są płatne?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nie. Pierwsze zajęcia są darmowe. Przyprowadź dziecko i sprawdź, czy mu się spodoba." }
+      },
+      {
+        "@type": "Question",
+        "name": "Gdzie odbywają się treningi?",
+        "acceptedAnswer": { "@type": "Answer", "text": "W Szkole Podstawowej nr 47 przy ul. Myśliwskiej 64 w Krakowie-Płaszowie. Dzieci trenują na dużej sali gimnastycznej lub na bieżni. Zajęcia „Motoryka smyka” odbywają się w CKP Płaszów." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kiedy i jak płacę za zajęcia?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Płatność odbywa się po pierwszych zrealizowanych zajęciach, gdy zdecydujesz, że dziecko zostaje. Wpłacasz przelewem: semestralnie albo co miesiąc. Numer konta znajdziesz w regulaminie." }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy jest zniżka dla rodzeństwa?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tak. Przy zapisie rodzeństwa opłata semestralna jest niższa o 50 zł za każde dziecko." }
       }
     ]
   }
@@ -71,59 +105,252 @@
 
   <main id="main">
     <section class="hero">
-      <h1>{{H1_HEADLINE}}</h1>
-      <p class="lead">{{SUBHEADLINE}}</p>
-      <a class="btn" href="#contact">{{CTA_LABEL}}</a>
-    </section>
-
-    <section id="benefits" class="section">
-      <h2>Why {{BRAND}}</h2>
-      <div class="grid">
-        <article class="card"><h3>Benefit one</h3><p>Describe the outcome, not the feature.</p></article>
-        <article class="card"><h3>Benefit two</h3><p>Describe the outcome, not the feature.</p></article>
-        <article class="card"><h3>Benefit three</h3><p>Describe the outcome, not the feature.</p></article>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="pill-tag">Zapisy na sezon 2026/2027</p>
+          <h1>Lekkoatletyka <span class="underline">dla dzieci</span> w Krakowie</h1>
+          <p class="lead">{{SUBHEADLINE}}</p>
+          <div class="hero-actions">
+            <a class="btn btn-big" href="#kontakt">Zapisz na darmowy trening</a>
+            <a class="btn btn-outline" href="#grafik">Zobacz grafik</a>
+          </div>
+          <ul class="ticks">
+            <li>Dzieci od 4 lat</li>
+            <li>Trenerzy: byli lekkoatleci</li>
+            <li>Płacisz po pierwszych zajęciach</li>
+          </ul>
+        </div>
+        <div class="hero-media">
+          <div class="blob" aria-hidden="true"></div>
+          <img class="hero-main" src="img/img_8053.jpg" width="1600" height="1066" alt="Trenerka idzie z dwiema dziewczynkami po bieżni przy szkole" fetchpriority="high">
+          <img class="hero-small" src="img/img_1807.jpg" width="1600" height="1066" alt="Chłopiec przeskakuje niskie płotki na sali gimnastycznej" loading="lazy">
+          <p class="badge-round"><b>1.</b> trening<br>gratis</p>
+        </div>
       </div>
     </section>
 
-    <section id="proof" class="section">
-      <h2>What people say</h2>
-      <blockquote>“Replace with a real testimonial.” <cite>Name, Role</cite></blockquote>
+    <section class="facts-band" aria-label="Najważniejsze informacje">
+      <div class="wrap facts">
+        <div class="fact"><b>4–6 lat</b><span>grupa przedszkolna</span></div>
+        <div class="fact"><b>kl. 1–3</b><span>grupa szkolna</span></div>
+        <div class="fact"><b>0 zł</b><span>pierwsze zajęcia</span></div>
+        <div class="fact"><b>Płaszów</b><span>ul. Myśliwska 64</span></div>
+      </div>
+    </section>
+
+    <section id="zajecia" class="section">
+      <div class="wrap two-col">
+        <div class="photo-frame">
+          <img src="img/img_1523.jpg" width="1600" height="1067" loading="lazy" alt="Trenerka ustawia grupę dzieci w rzędzie na sali gimnastycznej">
+        </div>
+        <div>
+          <p class="eyebrow">Na zajęciach</p>
+          <h2>Bieganie, skakanie i rzucanie przez zabawę</h2>
+          <p class="section-lead">Dzieci poznają świat lekkiej atletyki: biegi, skoki, rzuty i starty z bloków. Przy okazji rozwijają koordynację, sprawność i ducha sportowej rywalizacji.</p>
+          <ul class="activities">
+            <li>
+              <span class="ico ico-1" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2h5"/></svg></span>
+              <div><h3>Biegi</h3><p>Szybkość i wytrzymałość, na sali i na bieżni.</p></div>
+            </li>
+            <li>
+              <span class="ico ico-2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 19c3-9 15-9 18 0"/><path d="M17 15l4 4-5 1"/></svg></span>
+              <div><h3>Skoki</h3><p>Ćwiczenia skocznościowe, które uczą koordynacji i odwagi.</p></div>
+            </li>
+            <li>
+              <span class="ico ico-3" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+              <div><h3>Rzuty</h3><p>Siła, celność i technika rzutu.</p></div>
+            </li>
+          </ul>
+          <p class="note">Współpracujemy z KS AZS AWF Kraków. Dziecko, które złapie bakcyla, zaprosimy tam na trening próbny.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="grafik" class="section section-cream">
+      <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30C240 70 480 -10 720 30s480 40 720 0V60H0z"/></svg>
+      <div class="wrap">
+        <div class="center-head">
+          <p class="eyebrow">Grafik 2026/2027</p>
+          <h2>Kiedy trenujemy</h2>
+          <p class="section-lead">SP nr 47 przy ul. Myśliwskiej 64: duża sala gimnastyczna i bieżnia.</p>
+        </div>
+        <div class="slots">
+          <article class="slot slot-hot">
+            <p class="slot-tag">Wolne miejsca</p>
+            <h3>Grupa szkolna</h3>
+            <p class="slot-who">klasy 1–3</p>
+            <p class="slot-time"><span>Piątek</span> 16:45</p>
+            <a class="btn btn-block" href="#kontakt">Zapisz dziecko</a>
+          </article>
+          <article class="slot">
+            <p class="slot-tag slot-tag-grey">Brak wolnych miejsc</p>
+            <h3>Grupa przedszkolna</h3>
+            <p class="slot-who">4–6 lat</p>
+            <p class="slot-time"><span>Środa</span> 18:15</p>
+            <a class="btn btn-outline btn-block" href="#kontakt">Zapytaj o listę</a>
+          </article>
+          <article class="slot">
+            <p class="slot-tag slot-tag-grey">Zapisy przez CKP</p>
+            <h3>Motoryka smyka</h3>
+            <p class="slot-who">Centrum Kultury Płaszów</p>
+            <p class="slot-time"><span>Wtorek</span> 18:00</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cennik" class="section section-purple">
+      <div class="wrap two-col two-col-center">
+        <div>
+          <p class="eyebrow eyebrow-light">Cennik</p>
+          <h2>Najpierw trening, potem decyzja</h2>
+          <p class="section-lead">Pierwsze zajęcia są darmowe. Płacisz przelewem dopiero po nich, jeśli dziecko chce zostać.</p>
+          <a class="text-link" href="https://www.smoksport.pl/wp-content/uploads/2026/09/regulamin-smoksport-2026_2027-2.pdf">Regulamin zajęć 2026/2027 (PDF)</a>
+        </div>
+        <div class="prices">
+          <div class="price">
+            <p class="price-label">Za I semestr</p>
+            <p class="price-value">600 zł</p>
+            <p class="price-note">jednorazowo</p>
+          </div>
+          <div class="price">
+            <p class="price-label">Miesięcznie</p>
+            <p class="price-value">160 zł</p>
+            <p class="price-note">4 płatności w semestrze</p>
+          </div>
+          <p class="sibling">Rodzeństwo? Opłata semestralna niższa o 50 zł za każde dziecko.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="trenerzy" class="section">
+      <div class="wrap">
+        <div class="center-head">
+          <p class="eyebrow">Trenerzy</p>
+          <h2>Uczą byli lekkoatleci</h2>
+        </div>
+        <div class="coaches">
+          <article class="coach">
+            <span class="avatar av-1" aria-hidden="true">MK</span>
+            <h3>Magdalena Kunc</h3>
+            <p class="coach-role">Trenerka PZLA, Akademicka Mistrzyni Polski</p>
+            <p>Pasjonatka dyscyplin wytrzymałościowych z wykształceniem pedagogicznym. Jej misją jest rozpowszechnianie lekkoatletyki wśród najmłodszych. Biegała w barwach KS AZS AWF Kraków.</p>
+          </article>
+          <article class="coach">
+            <span class="avatar av-2" aria-hidden="true">SD</span>
+            <h3>Sara Drwal</h3>
+            <p class="coach-role">Absolwentka AWF Kraków, trenerka personalna</p>
+            <p>Na co dzień prowadzi z dziećmi gimnastykę ogólnorozwojową i korekcyjną. Wulkan pozytywnej energii. Przez lata biegała 800 m w barwach KS AZS AWF Kraków.</p>
+          </article>
+          <article class="coach">
+            <span class="avatar av-3" aria-hidden="true">GK</span>
+            <h3>Grzegorz Kunc</h3>
+            <p class="coach-role">Wielokrotny medalista Mistrzostw Polski</p>
+            <p>Były lekkoatleta, specjalista od biegów średniodystansowych, medalista MP seniorów i juniorów. Dziś startuje w triathlonie. Trenuje dzieci i dorosłych.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="dla-kobiet" class="section section-tight">
+      <div class="wrap">
+        <div class="women">
+          <img src="img/img_0630.jpg" width="1600" height="1065" loading="lazy" alt="Grupa biegaczek rozgrzewa się na ścieżce podczas wyjazdu biegowego">
+          <div class="women-card">
+            <p class="eyebrow">A dla mam?</p>
+            <h2>Rozbiegane Kobiety</h2>
+            <p>Damskie wyjazdy biegowe na każdym poziomie: weekend treningu, inspiracji i odpoczynku.</p>
+            <a class="btn" href="https://www.rozbieganekobiety.pl/" rel="noopener">Zobacz wyjazdy</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Every <summary> here must match a Question "name" in the FAQPage JSON-LD above (tools/check.mjs enforces it). -->
-    <section id="faq" class="section">
-      <h2>Frequently asked questions</h2>
-      <details>
-        <summary>Question one?</summary>
-        <p>Answer one.</p>
-      </details>
+    <section id="faq" class="section section-cream">
+      <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30C240 70 480 -10 720 30s480 40 720 0V60H0z"/></svg>
+      <div class="wrap faq-wrap">
+        <div class="center-head">
+          <p class="eyebrow">Pytania rodziców</p>
+          <h2>Dobrze wiedzieć</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Od ilu lat dziecko może trenować?</summary>
+            <p>Grupy prowadzimy już dla dzieci od 4. roku życia. Przedszkolaki (4–6 lat) trenują w grupie przedszkolnej, uczniowie klas 1–3 w grupie szkolnej.</p>
+          </details>
+          <details>
+            <summary>Czy pierwsze zajęcia są płatne?</summary>
+            <p>Nie. Pierwsze zajęcia są darmowe. Przyprowadź dziecko i sprawdź, czy mu się spodoba.</p>
+          </details>
+          <details>
+            <summary>Gdzie odbywają się treningi?</summary>
+            <p>W Szkole Podstawowej nr 47 przy ul. Myśliwskiej 64 w Krakowie-Płaszowie. Dzieci trenują na dużej sali gimnastycznej lub na bieżni. Zajęcia „Motoryka smyka” odbywają się w CKP Płaszów.</p>
+          </details>
+          <details>
+            <summary>Kiedy i jak płacę za zajęcia?</summary>
+            <p>Płatność odbywa się po pierwszych zrealizowanych zajęciach, gdy zdecydujesz, że dziecko zostaje. Wpłacasz przelewem: semestralnie albo co miesiąc. Numer konta znajdziesz w regulaminie.</p>
+          </details>
+          <details>
+            <summary>Czy jest zniżka dla rodzeństwa?</summary>
+            <p>Tak. Przy zapisie rodzeństwa opłata semestralna jest niższa o 50 zł za każde dziecko.</p>
+          </details>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>{{CTA_LABEL}}</h2>
-      <form id="lead-form" action="{{FORM_ENDPOINT}}" method="post"
-            data-msg-sending="Sending…"
-            data-msg-success="Thanks! We will be in touch."
-            data-msg-error="Something went wrong. Please try again.">
-        <!-- Fields: remove name/message if the brief wants a one-field form. Sending is tested with node tools/form-test.mjs. -->
-        <label>Name <input type="text" name="name" autocomplete="name"></label>
-        <label>Email <input type="email" name="email" required autocomplete="email"></label>
-        <label class="full">Message <textarea name="message" rows="4"></textarea></label>
-        <input type="hidden" name="_subject" value="New enquiry from the {{BRAND}} website">
-        <input type="hidden" name="page" value="{{PAGE_URL}}">
-        <!-- @if TURNSTILE_SITE_KEY -->
-        <!-- Anti-bot check (Cloudflare Turnstile): loaded on first use of the form, usually invisible. -->
-        <div class="turnstile" data-turnstile="{{TURNSTILE_SITE_KEY}}"></div>
+    <section id="kontakt" class="section">
+      <div class="wrap two-col">
+        <div class="contact-copy">
+          <p class="eyebrow">Daj się zarazić lekką!</p>
+          <h2>Zapisz dziecko na pierwszy, darmowy trening</h2>
+          <p class="section-lead">Wypełnij formularz zapisu, a odezwiemy się z terminem. Wolisz porozmawiać? Zadzwoń albo napisz.</p>
+          <div class="contact-cards">
+            <a class="contact-card" href="tel:+48570080490"><span>Zadzwoń</span>+48&nbsp;570&nbsp;080&nbsp;490</a>
+            <a class="contact-card" href="mailto:{{CONTACT_EMAIL}}"><span>Napisz</span>{{CONTACT_EMAIL}}</a>
+          </div>
+        </div>
+        <!-- @if !FORM_ENDPOINT -->
+        <!-- Until the form worker is set up, sign-ups go to the existing Google Form (the same one the old site used). -->
+        <div class="form-card signup-card">
+          <h3>Formularz zapisu</h3>
+          <p>Zapisz dziecko przez nasz formularz online. Odezwiemy się mailowo ze szczegółami pierwszego, darmowego treningu.</p>
+          <a class="btn btn-block" href="https://docs.google.com/forms/d/e/1FAIpQLSeXHFq6tYm8gBV1Si9iZvXjlh3dZ8hs0MTNYFBVsJ081wYpow/viewform" rel="noopener">{{CTA_LABEL}}</a>
+          <p class="form-note">Formularz otwiera się w Google Forms. Przed zapisem przeczytaj <a href="dokumenty/regulamin-2026-2027.pdf">regulamin zajęć</a> i <a href="dokumenty/klauzula-rodo-2026-2027.pdf">klauzulę RODO</a>.</p>
+        </div>
         <!-- @endif -->
-        <!-- @if FORM_ACCESS_KEY -->
-        <input type="hidden" name="access_key" value="{{FORM_ACCESS_KEY}}">
+        <!-- @if FORM_ENDPOINT -->
+        <form id="lead-form" class="form-card" action="{{FORM_ENDPOINT}}" method="post"
+              data-msg-sending="Wysyłanie…"
+              data-msg-success="Dziękujemy! Odezwiemy się wkrótce."
+              data-msg-error="Coś poszło nie tak. Spróbuj ponownie albo zadzwoń.">
+          <label>Imię rodzica <input type="text" name="name" autocomplete="name"></label>
+          <label>E-mail <input type="email" name="email" required autocomplete="email"></label>
+          <label>Telefon <input type="tel" name="phone" autocomplete="tel"></label>
+          <label>Grupa
+            <select name="group">
+              <option>Grupa szkolna (kl. 1–3), piątek 16:45</option>
+              <option>Grupa przedszkolna (4–6 lat), lista rezerwowa</option>
+              <option>Jeszcze nie wiem</option>
+            </select>
+          </label>
+          <label class="full">Wiadomość (wiek dziecka, pytania) <textarea name="message" rows="3"></textarea></label>
+          <input type="hidden" name="_subject" value="Nowe zgłoszenie ze strony {{BRAND}}">
+          <input type="hidden" name="page" value="{{PAGE_URL}}">
+          <!-- @if TURNSTILE_SITE_KEY -->
+          <div class="turnstile" data-turnstile="{{TURNSTILE_SITE_KEY}}"></div>
+          <!-- @endif -->
+          <!-- @if FORM_ACCESS_KEY -->
+          <input type="hidden" name="access_key" value="{{FORM_ACCESS_KEY}}">
+          <!-- @endif -->
+          <!-- honeypot: real visitors never see or fill this; bots do -->
+          <label class="hp" aria-hidden="true">Zostaw puste <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+          <button class="btn btn-block" type="submit">{{CTA_LABEL}}</button>
+          <p class="form-note">Twoje dane wykorzystamy tylko, by odpowiedzieć. Zobacz <a href="privacy.html">politykę prywatności</a>.</p>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
         <!-- @endif -->
-        <!-- honeypot: real visitors never see or fill this; bots do -->
-        <label class="hp" aria-hidden="true">Leave empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
-        <button class="btn" type="submit">{{CTA_LABEL}}</button>
-        <p class="form-note">We only use your email to reply. See the <a href="privacy.html">privacy policy</a>.</p>
-        <p id="form-status" role="status" aria-live="polite"></p>
-      </form>
+      </div>
     </section>
   </main>
 

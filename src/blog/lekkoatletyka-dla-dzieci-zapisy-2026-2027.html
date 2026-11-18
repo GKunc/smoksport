@@ -1,0 +1,105 @@
+<!-- @vars
+{
+  "POST_TITLE": "Lekkoatletyka dla dzieci w Krakowie: zapisy 2026/27",
+  "POST_DESCRIPTION": "Ruszyły zapisy na zajęcia lekkoatletyczne dla przedszkolaków i uczniów klas 1–3 w Krakowie-Płaszowie. Co robimy na treningach i jak zapisać dziecko.",
+  "DATE": "2026-08-14",
+  "DATE_MODIFIED": "",
+  "POST_IMAGE": "",
+  "CTA_HEADING": "Zapisz dziecko na darmowy trening",
+  "CTA_TEXT": "Pierwsze zajęcia są bezpłatne. Przyjdź z dzieckiem i sprawdź, czy mu się spodoba."
+}
+-->
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+  <!-- @include head -->
+  <title>{{POST_TITLE}} | {{BRAND}}</title>
+  <meta name="description" content="{{POST_DESCRIPTION}}">
+  <link rel="canonical" href="{{PAGE_URL}}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="{{BRAND}}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{BRAND}}">
+  <meta property="og:locale" content="{{LOCALE}}">
+  <meta property="og:title" content="{{POST_TITLE}}">
+  <meta property="og:description" content="{{POST_DESCRIPTION}}">
+  <meta property="og:url" content="{{PAGE_URL}}">
+  <meta property="og:image" content="{{POST_IMAGE}}">
+  <meta property="article:published_time" content="{{DATE}}">
+  <meta property="article:modified_time" content="{{DATE_MODIFIED}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{POST_TITLE}}">
+  <meta name="twitter:description" content="{{POST_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{POST_IMAGE}}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "{{PAGE_URL}}#article",
+        "headline": "{{POST_TITLE}}",
+        "description": "{{POST_DESCRIPTION}}",
+        "image": "{{POST_IMAGE}}",
+        "datePublished": "{{DATE}}",
+        "dateModified": "{{DATE_MODIFIED}}",
+        "inLanguage": "{{LANG}}",
+        "mainEntityOfPage": "{{PAGE_URL}}",
+        "author": { "@id": "{{SITE_URL}}/#organization" },
+        "publisher": { "@id": "{{SITE_URL}}/#organization" },
+        "isPartOf": { "@id": "{{SITE_URL}}/blog/#blog" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "{{BRAND}}", "item": "{{SITE_URL}}/" },
+          { "@type": "ListItem", "position": 2, "name": "Aktualności", "item": "{{SITE_URL}}/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "{{POST_TITLE}}", "item": "{{PAGE_URL}}" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- @include header -->
+  <main id="main" class="section">
+    <nav class="breadcrumb" aria-label="Okruszki">
+      <ol>
+        <li><a href="../">{{BRAND}}</a></li>
+        <li><a href="./">Aktualności</a></li>
+        <li aria-current="page">{{POST_TITLE}}</li>
+      </ol>
+    </nav>
+    <article>
+      <h1>{{POST_TITLE}}</h1>
+      <p class="post-meta">{{BRAND}} · <time datetime="{{DATE}}">{{DATE}}</time></p>
+      <p>Zapraszamy na nowy rok zajęć 2026/2027! To zajęcia, na których dzieci przede wszystkim bawią się w sport i poznają pierwsze elementy lekkiej atletyki. Zapraszamy dzieci w wieku przedszkolnym oraz uczniów klas I–III, którzy chcą aktywnie spędzać czas, rozwijać swoje umiejętności ruchowe i rozpocząć pierwszą przygodę z lekkoatletyką.</p>
+      <p class="note">Aktualne dni i godziny zajęć znajdziesz w <a href="../#grafik">grafiku na stronie głównej</a>.</p>
+      <figure class="post-figure">
+        <img src="../img/blog/plakat-2026-2027-sm.jpg" srcset="../img/blog/plakat-2026-2027-sm.jpg 509w, ../img/blog/plakat-2026-2027.jpg 989w" sizes="(min-width: 760px) 22rem, 80vw" width="989" height="1400" alt="Plakat Smok Sport: treningi sportowe dla najmłodszych, 4–6 lat i klasy 1–3, ul. Myśliwska 64 w Krakowie, zapisy na rok 2026/2027" loading="lazy" decoding="async">
+      </figure>
+      <h2>Czego dzieci uczą się na zajęciach?</h2>
+      <p>Podczas zajęć dzieci poznają podstawy:</p>
+      <ul>
+        <li>biegania i różnych form biegów,</li>
+        <li>skoków i ćwiczeń rozwijających skoczność,</li>
+        <li>rzutów i ćwiczeń kształtujących siłę oraz celność,</li>
+        <li>koordynacji ruchowej,</li>
+        <li>zwinności i szybkości reakcji,</li>
+        <li>równowagi, sprawności i ogólnej kondycji.</li>
+      </ul>
+      <h2>Zabawa zamiast presji na wynik</h2>
+      <p>Wszystko w formie dostosowanej do wieku dzieci: poprzez gry, zabawy, ćwiczenia i lekkoatletyczne wyzwania. Bez presji na wynik. Najważniejsze są ruch, dobra zabawa, rozwój i pozytywne pierwsze doświadczenia ze sportem. Taki sposób wprowadzania dzieci w lekkoatletykę jest zgodny z założeniami programów dla najmłodszych, w których nacisk kładzie się na zabawę oraz wszechstronny rozwój motoryczny.</p>
+      <h2>Jak zapisać dziecko?</h2>
+      <p>Wypełnij <a href="../#kontakt">formularz zapisu</a>, zadzwoń pod numer <a href="tel:+48570080490">+48&nbsp;570&nbsp;080&nbsp;490</a> albo napisz na <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>. Pierwsze zajęcia są darmowe.</p>
+      <aside class="cta-box">
+        <h2>{{CTA_HEADING}}</h2>
+        <p>{{CTA_TEXT}}</p>
+        <a class="btn" href="../#kontakt">{{CTA_LABEL}}</a>
+      </aside>
+    </article>
+  </main>
+  <!-- @include footer -->
+</body>
+</html>
