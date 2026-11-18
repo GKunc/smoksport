@@ -344,3 +344,33 @@ html:not(.js) .site-header .nav-mobile { margin-left:auto; }
 .account span { display:block; font-weight:600; font-size:.85rem; color:var(--accent-ink); }
 .contact-list { list-style:none; padding:0; margin:1.75rem 0 0; display:grid; gap:1rem; }
 .contact-list span { display:block; font-weight:600; font-size:.85rem; color:var(--accent-ink); }
+
+/* Schedule / price table (cennik) */
+.table-wrap { margin:1.5rem 0; border:1px solid var(--line); border-radius:var(--radius-sm); overflow:hidden; }
+.schedule { width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
+.schedule caption { text-align:left; font-weight:700; padding:.9rem 1rem; color:var(--accent-ink); }
+.schedule th, .schedule td { text-align:left; padding:.75rem 1rem; border-top:1px solid var(--line); vertical-align:top; }
+.schedule thead th { background:var(--accent-soft); font-size:.9rem; }
+.schedule tbody th { font-weight:700; }
+@media (max-width: 699px) {
+  .schedule thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+  .schedule tr, .schedule tbody th, .schedule td { display:block; }
+  .schedule tbody tr { border-top:1px solid var(--line); padding:.6rem 0; }
+  .schedule tbody th, .schedule td { border:0; padding:.2rem 1rem; }
+  .schedule tbody th { font-size:1.1rem; }
+  .schedule td::before { content:attr(data-label) ": "; font-weight:600; color:var(--muted); }
+}
+
+/* "Zobacz też" links at the end of a post */
+.related { margin:2rem 0 0; }
+.related h2 { font-size:1.3rem; }
+.related ul { padding-left:1.2rem; display:grid; gap:.4rem; }
+
+/* Parent reviews (home) */
+.reviews { display:grid; gap:1.25rem; max-width:52rem; margin:0 auto; }
+@media (min-width: 700px) { .reviews { grid-template-columns:1fr 1fr; } }
+.review { background:var(--cream); border-radius:var(--radius); padding:1.75rem; margin:0; }
+.review blockquote { margin:0; font:600 1.2rem/1.35 var(--display); }
+.review blockquote p { margin:0; }
+.review figcaption { margin-top:.9rem; color:var(--muted); font-size:.95rem; }
+.reviews-more { text-align:center; margin:1.5rem 0 0; font-weight:700; }

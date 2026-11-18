@@ -17,7 +17,7 @@
   <meta name="description" content="{{POST_DESCRIPTION}}">
   <link rel="canonical" href="{{PAGE_URL}}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="author" content="{{BRAND}}">
+  <meta name="author" content="{{AUTHOR_NAME}}">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="{{BRAND}}">
   <meta property="og:locale" content="{{LOCALE}}">
@@ -45,7 +45,7 @@
         "dateModified": "{{DATE_MODIFIED}}",
         "inLanguage": "{{LANG}}",
         "mainEntityOfPage": "{{PAGE_URL}}",
-        "author": { "@id": "{{SITE_URL}}/#organization" },
+        "author": { "@type": "Person", "name": "{{AUTHOR_NAME}}", "url": "{{AUTHOR_URL}}", "jobTitle": "Trenerka PZLA", "worksFor": { "@id": "{{SITE_URL}}/#organization" } },
         "publisher": { "@id": "{{SITE_URL}}/#organization" },
         "isPartOf": { "@id": "{{SITE_URL}}/blog/#blog" }
       },
@@ -73,7 +73,8 @@
     </nav>
     <article>
       <h1>{{POST_TITLE}}</h1>
-      <p class="post-meta">{{BRAND}} · <time datetime="{{DATE}}">{{DATE}}</time></p>
+      <p class="post-meta"><a href="../#trenerzy">{{AUTHOR_NAME}}</a>, trenerka {{BRAND}} · <time datetime="{{DATE}}">{{DATE}}</time></p>
+      <p class="lead">Na pikniku „Od Juniora do Seniora” Smok Sport poprowadził zajęcia lekkoatletyczne dla dzieci: skoki, rzut oszczepem, bieg przez płotki i zabawy.</p>
       <p>Cześć wszystkim miłośnikom sportu i aktywności fizycznej! Mamy przyjemność podzielić się z Wami wieściami z pikniku „Od Juniora do Seniora”, który odbył się niedawno w naszym mieście. Jesteśmy dumni, że mogliśmy poprowadzić zajęcia lekkoatletyczne dla dzieci, dzięki którym maluchy mogły spróbować swoich sił i zaszaleć na sportowym polu.</p>
       <p>Smok Sport przyłączył się do tego wydarzenia, aby promować zdrowy tryb życia i pasję do sportu wśród najmłodszych. Nasze zajęcia cieszyły się ogromnym zainteresowaniem i były prawdziwym hitem pikniku.</p>
       <h2>Co robiliśmy na zajęciach lekkoatletycznych?</h2>
@@ -85,6 +86,15 @@
       </ul>
       <p>Nie zabrakło uśmiechów, radości i ogromnej energii dzieci. Maluchy poznały tajniki lekkoatletyki, ale przede wszystkim cieszyły się aktywnością na świeżym powietrzu.</p>
       <p>Dziękujemy organizatorom pikniku „Od Juniora do Seniora” za zaproszenie, a uczestnikom, rodzicom i naszym trenerom za niezapomniane chwile. Sport to pasja, która łączy pokolenia!</p>
+      <nav class="related" aria-label="Zobacz też">
+        <h2>Zobacz też</h2>
+        <ul>
+          <li><a href="../oferta-dzieci/">Zajęcia lekkoatletyczne dla dzieci: oferta i grafik</a></li>
+          <li><a href="../cennik/">Cennik zajęć 2026/2027</a></li>
+          <li><a href="trening-z-mistrzem-swiata.html">Trening z mistrzem świata</a></li>
+          <li><a href="lekkoatletyka-dla-dzieci-zapisy-2026-2027.html">Lekkoatletyka dla dzieci w Krakowie: zapisy 2026/27</a></li>
+        </ul>
+      </nav>
       <aside class="cta-box">
         <h2>{{CTA_HEADING}}</h2>
         <p>{{CTA_TEXT}}</p>

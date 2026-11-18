@@ -17,7 +17,7 @@
   <meta name="description" content="{{POST_DESCRIPTION}}">
   <link rel="canonical" href="{{PAGE_URL}}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="author" content="{{BRAND}}">
+  <meta name="author" content="{{AUTHOR_NAME}}">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="{{BRAND}}">
   <meta property="og:locale" content="{{LOCALE}}">
@@ -45,7 +45,7 @@
         "dateModified": "{{DATE_MODIFIED}}",
         "inLanguage": "{{LANG}}",
         "mainEntityOfPage": "{{PAGE_URL}}",
-        "author": { "@id": "{{SITE_URL}}/#organization" },
+        "author": { "@type": "Person", "name": "{{AUTHOR_NAME}}", "url": "{{AUTHOR_URL}}", "jobTitle": "Trenerka PZLA", "worksFor": { "@id": "{{SITE_URL}}/#organization" } },
         "publisher": { "@id": "{{SITE_URL}}/#organization" },
         "isPartOf": { "@id": "{{SITE_URL}}/blog/#blog" }
       },
@@ -73,11 +73,21 @@
     </nav>
     <article>
       <h1>{{POST_TITLE}}</h1>
-      <p class="post-meta">{{BRAND}} · <time datetime="{{DATE}}">{{DATE}}</time></p>
+      <p class="post-meta"><a href="../#trenerzy">{{AUTHOR_NAME}}</a>, trenerka {{BRAND}} · <time datetime="{{DATE}}">{{DATE}}</time></p>
+      <p class="lead">Dzieci ze Smok Sport pobiegły w pierwszym krakowskim biegu przełajowym KRAKOSKIKROS, zorganizowanym przez AZS AWF Kraków Masters.</p>
       <p>Serdeczne gratulacje dla wszystkich dzieci, które wzięły udział w pierwszym biegu crossowym dla amatorów (i nie tylko) w Krakowie! Wasz niesamowity wysiłek i determinacja zasługują na ogromne uznanie. Chcielibyśmy również serdecznie pogratulować organizatorom, AZS AWF Kraków Masters, udanej inicjatywy!</p>
       <p>KRAKOSKIKROS przejdzie do historii. W sekrecie zdradzimy, że w planach jest kolejna edycja…</p>
       <p>Biegi przełajowe to nie tylko sport, to również wyzwanie ducha i determinacji. Dziewczynki, to Wasz pierwszy krok w fascynującej rywalizacji sportowej na wysokim poziomie. Gratulujemy odwagi i wytrwałości – to dopiero początek Waszej sportowej przygody! Wspaniała robota!</p>
       <p>Śledź nasze wydarzenia w Krakowie na <a href="https://www.facebook.com/profile.php?id=100091447430165" rel="noopener">Facebooku</a>.</p>
+      <nav class="related" aria-label="Zobacz też">
+        <h2>Zobacz też</h2>
+        <ul>
+          <li><a href="../oferta-dzieci/">Zajęcia lekkoatletyczne dla dzieci: oferta i grafik</a></li>
+          <li><a href="../cennik/">Cennik zajęć 2026/2027</a></li>
+          <li><a href="zawody-na-stadionie-azs-akf-krakow.html">Udział w zawodach na stadionie AZS AKF Kraków</a></li>
+          <li><a href="trening-z-mistrzem-swiata.html">Trening z mistrzem świata</a></li>
+        </ul>
+      </nav>
       <aside class="cta-box">
         <h2>{{CTA_HEADING}}</h2>
         <p>{{CTA_TEXT}}</p>

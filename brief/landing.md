@@ -10,6 +10,7 @@ live in `site.config.json`, not here: the build puts them into every page. This 
 - Social profiles (become schema.org `sameAs`):
   - https://www.facebook.com/profile.php?id=100091447430165
   - https://www.instagram.com/smoksport/
+  - https://maps.google.com/?cid=8363382794408190962 (wizytówka Google, 5,0 / 5 opinii, 2026-11)
 
 ## Hosting
 - REPO_NAME: smoksport
@@ -22,7 +23,7 @@ live in `site.config.json`, not here: the build puts them into every page. This 
 - Main problem solved: wszechstronny rozwój ruchowy dziecka przez zabawę i elementy lekkiej atletyki
 - Unique selling points: trenerzy to byli lekkoatleci (AZS AWF Kraków, medale MP); współpraca z KS AZS AWF Kraków (zaangażowane dzieci zapraszane na trening próbny); pierwsze zajęcia gratis
 - Price / offer: sezon 2026/2027, I semestr: 600 zł semestralnie lub 160 zł miesięcznie (4 płatności); rodzeństwo −50 zł od dziecka w opłacie semestralnej; płatność po pierwszych zajęciach
-- Location / service area: SP nr 47, ul. Myśliwska 64, Kraków-Płaszów (duża sala gimnastyczna, bieżnia); CKP Płaszów
+- Location / service area: SP nr 47, ul. Myśliwska 64, 30-718 Kraków-Płaszów (duża sala gimnastyczna, bieżnia); CKP Płaszów
 - Grafik: grupa przedszkolna 4–6 lat środa 18:15 (brak wolnych miejsc); grupa szkolna kl. 1–3 piątek 16:45; CKP Płaszów „Motoryka smyka” wtorek 18:00 (zapisy przez CKP)
 - Trenerzy: Magdalena Kunc, Sara Drwal, Grzegorz Kunc (bio z obecnej strony smoksport.pl)
 - Kontakt: +48 570 080 490, smoksportkrakow@gmail.com
@@ -40,7 +41,7 @@ live in `site.config.json`, not here: the build puts them into every page. This 
   A:
 
 ## Author (for blog posts and E-E-A-T; name and URL go into site.config.json)
-- AUTHOR_BIO: (one or two sentences on real expertise)
+- AUTHOR_BIO: Magdalena Kunc — trenerka PZLA, Akademicka Mistrzyni Polski, wykształcenie pedagogiczne; biegała w barwach KS AZS AWF Kraków.
 
 ## Voice
 - Tone: ciepły, energiczny, konkretny; mówimy do rodzica
@@ -60,7 +61,8 @@ live in `site.config.json`, not here: the build puts them into every page. This 
 - AI_CRAWLERS: allow-all
 
 ## Facts Claude must not invent
-- (claims, numbers, testimonials, legal details)
+- „AZS AKF Kraków” we wpisie o zawodach (Krakowska Rodzinna Olimpiada Sportowa) jest poprawne — nie zmieniać na AWF.
+- Opinie rodziców: są na wizytówce Smok Sport w Google; cytować tylko za zgodą autorów.
 
 ## site.config.json cheat sheet
 | Key | What to put |
