@@ -6,7 +6,6 @@
   <meta name="description" content="{{META_DESCRIPTION}}">
   <link rel="canonical" href="{{PAGE_URL}}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <link rel="preload" href="img/img_8053.jpg" as="image" fetchpriority="high">
   <!-- @if GOOGLE_SITE_VERIFICATION -->
   <meta name="google-site-verification" content="{{GOOGLE_SITE_VERIFICATION}}">
   <!-- @endif -->
@@ -122,8 +121,16 @@
         </div>
         <div class="hero-media">
           <div class="blob" aria-hidden="true"></div>
-          <img class="hero-main" src="img/img_8053.jpg" width="1600" height="1066" alt="Trenerka idzie z dwiema dziewczynkami po bieżni przy szkole" fetchpriority="high">
-          <img class="hero-small" src="img/img_1807.jpg" width="1600" height="1066" alt="Chłopiec przeskakuje niskie płotki na sali gimnastycznej" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="img/img_8053-4x5-480.avif 480w, img/img_8053-4x5-640.avif 640w, img/img_8053-4x5-853.avif 853w" sizes="(min-width: 960px) 500px, 88vw">
+            <source type="image/webp" srcset="img/img_8053-4x5-480.webp 480w, img/img_8053-4x5-640.webp 640w, img/img_8053-4x5-853.webp 853w" sizes="(min-width: 960px) 500px, 88vw">
+            <img class="hero-main" src="img/img_8053.jpg" width="853" height="1066" alt="Trenerka idzie z dwiema dziewczynkami po bieżni przy szkole" fetchpriority="high">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="img/img_1807-sq-320.avif 320w, img/img_1807-sq-480.avif 480w, img/img_1807-sq-640.avif 640w" sizes="(min-width: 960px) 262px, 46vw">
+            <source type="image/webp" srcset="img/img_1807-sq-320.webp 320w, img/img_1807-sq-480.webp 480w, img/img_1807-sq-640.webp 640w" sizes="(min-width: 960px) 262px, 46vw">
+            <img class="hero-small" src="img/img_1807.jpg" width="1066" height="1066" alt="Chłopiec przeskakuje niskie płotki na sali gimnastycznej" loading="lazy" decoding="async">
+          </picture>
           <p class="badge-round"><b>1.</b> trening<br>gratis</p>
         </div>
       </div>
@@ -141,7 +148,11 @@
     <section id="zajecia" class="section">
       <div class="wrap two-col">
         <div class="photo-frame">
-          <img src="img/img_1523-sm.jpg" srcset="img/img_1523-sm.jpg 800w, img/img_1523.jpg 1600w" sizes="(min-width: 900px) 40vw, 100vw" width="1600" height="1067" loading="lazy" alt="Trenerka ustawia grupę dzieci w rzędzie na sali gimnastycznej">
+          <picture>
+            <source type="image/avif" srcset="img/img_1523-photo-640.avif 640w, img/img_1523-photo-960.avif 960w, img/img_1523-photo-1255.avif 1255w" sizes="(min-width: 1200px) 560px, (min-width: 900px) 46vw, 100vw">
+            <source type="image/webp" srcset="img/img_1523-photo-640.webp 640w, img/img_1523-photo-960.webp 960w, img/img_1523-photo-1255.webp 1255w" sizes="(min-width: 1200px) 560px, (min-width: 900px) 46vw, 100vw">
+            <img src="img/img_1523.jpg" width="1255" height="1067" loading="lazy" alt="Trenerka ustawia grupę dzieci w rzędzie na sali gimnastycznej" decoding="async">
+          </picture>
         </div>
         <div>
           <p class="eyebrow">Na zajęciach</p>
@@ -223,7 +234,11 @@
     <section id="dla-kobiet" class="section section-tight">
       <div class="wrap">
         <div class="women">
-          <img src="img/img_0630.jpg" width="1600" height="1065" loading="lazy" alt="Grupa biegaczek rozgrzewa się na ścieżce podczas wyjazdu biegowego">
+          <picture>
+            <source type="image/avif" srcset="img/img_0630-480.avif 480w, img/img_0630-800.avif 800w, img/img_0630-1200.avif 1200w, img/img_0630-1600.avif 1600w" sizes="(min-width: 1200px) 1168px, 100vw">
+            <source type="image/webp" srcset="img/img_0630-480.webp 480w, img/img_0630-800.webp 800w, img/img_0630-1200.webp 1200w, img/img_0630-1600.webp 1600w" sizes="(min-width: 1200px) 1168px, 100vw">
+            <img src="img/img_0630.jpg" width="1600" height="1065" loading="lazy" alt="Grupa biegaczek rozgrzewa się na ścieżce podczas wyjazdu biegowego" decoding="async">
+          </picture>
           <div class="women-card">
             <p class="eyebrow">A dla mam?</p>
             <h2>Rozbiegane Kobiety</h2>

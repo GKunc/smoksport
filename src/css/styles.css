@@ -37,6 +37,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
 body { margin:0; font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
 a { color: var(--accent); text-underline-offset: 3px; }
 img, svg, video { max-width:100%; height:auto; display:block; }
+picture { display:contents; }
 h1, h2, h3 { font-family: var(--display); font-weight:600; line-height:1.08; letter-spacing:-0.01em; margin:0; text-wrap:balance; }
 h2 { font-size: clamp(2rem, 4.4vw, 3.1rem); margin-bottom:1rem; }
 h3 { font-size: 1.3rem; }
@@ -93,9 +94,11 @@ p { margin: 0 0 1rem; }
 .hero-grid { display:grid; gap:3rem; align-items:center; }
 .hero-grid > * { min-width:0; }
 @media (min-width: 960px) { .hero { padding:4.5rem 0 6rem; } .hero-grid { grid-template-columns: 1fr 1fr; gap:4rem; } }
-.hero-copy { animation:rise .7s ease both; }
+.hero-copy { animation:slide .7s ease both; }
 .hero-media { animation:rise .7s .15s ease both; }
 @keyframes rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
+/* The headline is the largest thing on a phone screen: it moves in but is never invisible, so it counts as painted at once. */
+@keyframes slide { from { transform:translateY(18px); } to { transform:none; } }
 .pill-tag { display:inline-flex; align-items:center; gap:.5rem; background:var(--accent-soft); color:var(--accent); font-weight:700; font-size:.88rem; padding:.45rem 1rem; border-radius:999px; margin-bottom:1.5rem; }
 .pill-tag::before { content:""; width:.5rem; height:.5rem; border-radius:50%; background:var(--sun); }
 .hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); font-weight:700; line-height:1.02; color:var(--text); margin-bottom:1.25rem; }
@@ -308,7 +311,7 @@ cite { display:block; color:var(--muted); font-size:.9rem; margin-top:.5rem; }
 .gallery { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:.75rem; }
 @media (min-width: 900px) { .gallery { grid-template-columns:repeat(3, minmax(0,1fr)); gap:1rem; } }
 .gallery img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius-sm); }
-.gallery img:first-child { object-position:center 30%; }
+.gallery picture:first-child img { object-position:center 30%; }
 .link-cards { display:grid; gap:.75rem; }
 .account { background:var(--cream); border-radius:var(--radius-sm); padding:1rem 1.25rem; font-weight:700; font-size:1.1rem; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
 .account span { display:block; font-weight:600; font-size:.85rem; color:var(--accent); }
